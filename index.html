@@ -25,7 +25,10 @@
     .call-btn:hover { transform: scale(1.1); }
     .hero { position: relative; height: 700px; display: flex; align-items: center; justify-content: center; background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('https://id-preview--943dbc52-5e7e-4357-ba44-c6ddcf904cfd.lovable.app/__l5e/assets-v1/b6c45104-e70a-421a-a1ed-c93f762bca3d/facade.webp'); background-size: cover; background-position: center; border-bottom: 2px solid #c4935c; text-align: center; }
     .hero h1 { font-family: 'Cinzel', serif; font-size: 72px; font-weight: 700; letter-spacing: 5px; margin-bottom: 20px; color: #c4935c; }
-    .hero p { font-size: 20px; letter-spacing: 2px; font-weight: 300; }
+    .hero p { font-size: 20px; letter-spacing: 2px; font-weight: 300; margin-bottom: 40px; }
+    .hero-actions { display: flex; gap: 20px; justify-content: center; }
+    .hero-btn { padding: 12px 40px; border: 2px solid #c4935c; color: #c4935c; font-family: 'Cinzel', serif; font-size: 14px; letter-spacing: 1px; text-decoration: none; transition: all 0.3s; background-color: transparent; }
+    .hero-btn:hover { background-color: #c4935c; color: #0a0a0a; }
     .about { max-width: 1200px; margin: 60px auto; padding: 0 20px; }
     .about h2 { font-family: 'Cinzel', serif; font-size: 36px; color: #c4935c; margin-bottom: 40px; text-align: center; letter-spacing: 3px; }
     .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
@@ -44,10 +47,20 @@
     .contact-grid a:hover { opacity: 0.8; text-decoration: underline; }
     footer { background-color: #0a0a0a; border-top: 2px solid #c4935c; padding: 30px 20px; text-align: center; }
     footer p { font-size: 12px; color: #999; margin: 5px 0; }
+    .horaires { background-color: #0a0a0a; padding: 60px 20px; margin-top: 60px; }
+    .horaires-inner { max-width: 1200px; margin: 0 auto; }
+    .horaires h3 { font-family: 'Cinzel', serif; font-size: 28px; color: #c4935c; margin-bottom: 40px; text-align: center; letter-spacing: 2px; }
+    .horaires-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
+    .horaire-item { text-align: center; padding: 20px; border: 1px solid #c4935c; border-radius: 4px; }
+    .horaire-item strong { font-family: 'Cinzel', serif; font-size: 14px; color: #c4935c; display: block; margin-bottom: 15px; letter-spacing: 1px; }
+    .horaire-item p { font-size: 14px; color: #ddd; line-height: 1.8; }
     @media (max-width: 768px) {
       .hero h1 { font-size: 42px; }
+      .hero-actions { gap: 10px; }
+      .hero-btn { padding: 10px 25px; font-size: 12px; }
       .about-grid { grid-template-columns: 1fr; }
       .contact-grid { gap: 30px; }
+      .horaires-grid { grid-template-columns: repeat(2, 1fr); }
       nav { gap: 15px; }
       nav a { font-size: 12px; }
     }
@@ -72,6 +85,10 @@
     <div>
       <h1>LE PAS-V</h1>
       <p>RESTAURANT • GRILL</p>
+      <div class="hero-actions">
+        <a href="plats.html" class="hero-btn">Notre Carte</a>
+        <a href="contact.html" class="hero-btn">Réservation</a>
+      </div>
     </div>
   </section>
 
@@ -112,9 +129,29 @@
           <strong>Email</strong>
           <p><a href="mailto:lepasv.restaurant@gmail.com">lepasv.restaurant@gmail.com</a></p>
         </div>
-        <div>
-          <strong>Horaires</strong>
-          <p>Lun-Jeu: 11h30-14h30 / 18h30-22h30<br>Ven-Sam: 11h30-14h30 / 18h30-23h<br>Dimanche: Fermé</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="horaires" id="horaires">
+    <div class="horaires-inner">
+      <h3>Horaires d'Ouverture</h3>
+      <div class="horaires-grid">
+        <div class="horaire-item">
+          <strong>Lundi</strong>
+          <p>Fermé</p>
+        </div>
+        <div class="horaire-item">
+          <strong>Mardi - Jeudi</strong>
+          <p>11h30 - 14h30<br>18h30 - 22h30</p>
+        </div>
+        <div class="horaire-item">
+          <strong>Vendredi - Samedi</strong>
+          <p>11h30 - 14h30<br>18h30 - 23h00</p>
+        </div>
+        <div class="horaire-item">
+          <strong>Dimanche</strong>
+          <p>Fermé</p>
         </div>
       </div>
     </div>
