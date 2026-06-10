@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Le Pas-V — Restaurant Grill Franco-Belge</title>
+  <meta name="description" content="Restaurant grill franco-belge à l'esprit chaleureux : viandes locales grillées à la perfection par notre chef.">
+  <meta property="og:title" content="Le Pas-V — Restaurant Grill Franco-Belge">
+  <meta property="og:description" content="Restaurant grill franco-belge à l'esprit chaleureux : viandes locales grillées à la perfection par notre chef.">
+  <meta property="og:image" content="https://id-preview--943dbc52-5e7e-4357-ba44-c6ddcf904cfd.lovable.app/__l5e/assets-v1/b6c45104-e70a-421a-a1ed-c93f762bca3d/facade.webp">
+  <meta name="twitter:image" content="https://id-preview--943dbc52-5e7e-4357-ba44-c6ddcf904cfd.lovable.app/__l5e/assets-v1/b6c45104-e70a-421a-a1ed-c93f762bca3d/facade.webp">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=EB+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background-color: #0a0a0a; color: #fff; font-family: 'EB Garamond', serif; line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    header { position: sticky; top: 0; background-color: #0a0a0a; border-bottom: 2px solid #c4935c; padding: 15px 0; z-index: 100; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-family: 'Cinzel', serif; font-size: 28px; font-weight: 700; letter-spacing: 3px; color: #c4935c; }
+    nav { display: flex; gap: 30px; }
+    nav a { color: #fff; text-decoration: none; font-size: 14px; letter-spacing: 1px; font-family: 'Cinzel', serif; transition: color 0.3s; }
+    nav a:hover { color: #c4935c; }
+    .call-btn { position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; background-color: #c4935c; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 24px; box-shadow: 0 4px 15px rgba(196, 147, 92, 0.4); z-index: 99; color: #000; transition: transform 0.3s; }
+    .call-btn:hover { transform: scale(1.1); }
+    .hero { position: relative; height: 700px; display: flex; align-items: center; justify-content: center; background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('https://id-preview--943dbc52-5e7e-4357-ba44-c6ddcf904cfd.lovable.app/__l5e/assets-v1/b6c45104-e70a-421a-a1ed-c93f762bca3d/facade.webp'); background-size: cover; background-position: center; border-bottom: 2px solid #c4935c; text-align: center; }
+    .hero h1 { font-family: 'Cinzel', serif; font-size: 72px; font-weight: 700; letter-spacing: 5px; margin-bottom: 20px; color: #c4935c; }
+    .hero p { font-size: 20px; letter-spacing: 2px; font-weight: 300; }
+    .about { max-width: 1200px; margin: 60px auto; padding: 0 20px; }
+    .about h2 { font-family: 'Cinzel', serif; font-size: 36px; color: #c4935c; margin-bottom: 40px; text-align: center; letter-spacing: 3px; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+    .about-grid img { width: 100%; height: 100%; max-height: 480px; object-fit: cover; border-radius: 4px; border: 1px solid #c4935c; }
+    .about-cards { display: grid; gap: 30px; }
+    .about-cards h3 { font-family: 'Cinzel', serif; font-size: 18px; color: #c4935c; margin-bottom: 15px; letter-spacing: 1px; }
+    .about-cards p { font-size: 14px; color: #ddd; line-height: 1.8; }
+    .contact { background: linear-gradient(180deg, #0a0a0a 0%, #111 100%); border-top: 2px solid #c4935c; border-bottom: 2px solid #c4935c; padding: 60px 20px; margin-top: 60px; }
+    .contact-inner { max-width: 1200px; margin: 0 auto; text-align: center; }
+    .contact h3 { font-family: 'Cinzel', serif; font-size: 28px; color: #c4935c; margin-bottom: 30px; letter-spacing: 2px; }
+    .contact-grid { display: flex; justify-content: center; gap: 80px; flex-wrap: wrap; }
+    .contact-grid > div { text-align: center; }
+    .contact-grid strong { font-family: 'Cinzel', serif; font-size: 14px; color: #c4935c; display: block; margin-bottom: 8px; letter-spacing: 1px; }
+    .contact-grid p, .contact-grid a { font-size: 14px; color: #ddd; }
+    .contact-grid a { color: #c4935c; text-decoration: none; transition: opacity 0.3s; }
+    .contact-grid a:hover { opacity: 0.8; text-decoration: underline; }
+    footer { background-color: #0a0a0a; border-top: 2px solid #c4935c; padding: 30px 20px; text-align: center; }
+    footer p { font-size: 12px; color: #999; margin: 5px 0; }
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 42px; }
+      .about-grid { grid-template-columns: 1fr; }
+      .contact-grid { gap: 30px; }
+      nav { gap: 15px; }
+      nav a { font-size: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="logo">LE PAS-V</div>
+      <nav>
+        <a href="#accueil">Accueil</a>
+        <a href="#apropos">À Propos</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <a href="tel:010878145" class="call-btn" aria-label="Appeler">☎</a>
+
+  <section class="hero" id="accueil">
+    <div>
+      <h1>LE PAS-V</h1>
+      <p>RESTAURANT • GRILL</p>
+    </div>
+  </section>
+
+  <section class="about" id="apropos">
+    <h2>Qui Sommes-Nous</h2>
+    <div class="about-grid">
+      <img src="https://id-preview--943dbc52-5e7e-4357-ba44-c6ddcf904cfd.lovable.app/__l5e/assets-v1/89f4d960-af9b-4235-9eb1-7b9fb78ccd05/chef.avif" alt="La main du chef au travail">
+      <div class="about-cards">
+        <div>
+          <h3>Touche du Chef</h3>
+          <p>Chaque pièce de viande est soigneusement sélectionnée par notre Chef, puis grillée à la perfection pour mettre en valeur le savoir-faire franco-belge à travers des recettes authentiques et audacieuses.</p>
+        </div>
+        <div>
+          <h3>Équipe Passionnée</h3>
+          <p>Notre équipe, chaleureuse et attentionnée, est là pour vous offrir une expérience conviviale. Dès votre arrivée, vous serez accueilli comme un membre de la famille.</p>
+        </div>
+        <div>
+          <h3>Qualité Exceptionnelle</h3>
+          <p>Nous travaillons exclusivement avec des viandes locales de première qualité, choisies pour leur goût et leur traçabilité. Chaque bouchée reflète notre engagement envers une cuisine généreuse et savoureuse.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="contact-inner">
+      <h3>Nous Contacter</h3>
+      <div class="contact-grid">
+        <div>
+          <strong>Téléphone</strong>
+          <p><a href="tel:010878145">010 87 81 45</a></p>
+        </div>
+        <div>
+          <strong>Adresse</strong>
+          <p>Rue Charles Sambon 14<br>1300 Wavre</p>
+        </div>
+        <div>
+          <strong>Email</strong>
+          <p><a href="mailto:lepasv.restaurant@gmail.com">lepasv.restaurant@gmail.com</a></p>
+        </div>
+        <div>
+          <strong>Horaires</strong>
+          <p>Lun-Jeu: 11h30-14h30 / 18h30-22h30<br>Ven-Sam: 11h30-14h30 / 18h30-23h<br>Dimanche: Fermé</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Le Pas-V. Tous droits réservés.</p>
+    <p>Restaurant Grill Franco-Belge</p>
+  </footer>
+</body>
+</html>

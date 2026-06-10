@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boissons - Le Pas-V</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=EB+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #0a0a0a;
+            color: #ffffff;
+            font-family: 'EB Garamond', serif;
+            line-height: 1.6;
+        }
+        
+        header {
+            position: sticky;
+            top: 0;
+            background-color: #0a0a0a;
+            border-bottom: 2px solid #c4935c;
+            padding: 15px 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            font-family: 'Cinzel', serif;
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: #c4935c;
+            text-decoration: none;
+        }
+        
+        nav {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+        
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+            font-family: 'Cinzel', serif;
+        }
+        
+        nav a:hover {
+            color: #c4935c;
+        }
+        
+        nav a.active {
+            color: #c4935c;
+            border-bottom: 1px solid #c4935c;
+            padding-bottom: 5px;
+        }
+        
+        .phone-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #c4935c;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 24px;
+            box-shadow: 0 4px 15px rgba(196, 147, 92, 0.4);
+            z-index: 99;
+            transition: all 0.3s;
+            color: #000;
+        }
+        
+        .phone-btn:hover {
+            background-color: #d4a574;
+            transform: scale(1.1);
+        }
+        
+        .page-title {
+            max-width: 1200px;
+            margin: 60px auto 40px;
+            padding: 0 20px;
+            text-align: center;
+        }
+        
+        .page-title h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 48px;
+            letter-spacing: 3px;
+            color: #c4935c;
+            margin-bottom: 10px;
+        }
+        
+        .page-title p {
+            font-style: italic;
+            color: #999;
+            font-size: 14px;
+        }
+        
+        .menu-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px 60px;
+        }
+        
+        .menu-section {
+            margin-bottom: 60px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #333;
+        }
+        
+        .menu-section:last-child {
+            border-bottom: none;
+        }
+        
+        .section-title {
+            font-family: 'Cinzel', serif;
+            font-size: 32px;
+            color: #c4935c;
+            margin-bottom: 30px;
+            text-align: center;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+        
+        .menu-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        
+        .menu-item {
+            margin-bottom: 20px;
+        }
+        
+        .item-name {
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        
+        .item-price {
+            color: #c4935c;
+            font-weight: 600;
+        }
+        
+        .item-description {
+            font-size: 13px;
+            color: #999;
+            font-style: italic;
+            line-height: 1.4;
+        }
+        
+        footer {
+            background-color: #0a0a0a;
+            border-top: 2px solid #c4935c;
+            padding: 30px 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        footer p {
+            font-size: 12px;
+            color: #999;
+            margin: 5px 0;
+        }
+        
+        footer a {
+            color: #c4935c;
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        .allergies-note {
+            font-size: 12px;
+            color: #999;
+            margin-top: 30px;
+            text-align: center;
+            font-style: italic;
+        }
+        
+        @media (max-width: 768px) {
+            nav {
+                gap: 15px;
+            }
+            
+            nav a {
+                font-size: 12px;
+            }
+            
+            .menu-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .page-title h1 {
+                font-size: 36px;
+            }
+            
+            .section-title {
+                font-size: 24px;
+            }
+            
+            .phone-btn {
+                width: 55px;
+                height: 55px;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">LE PAS-V</a>
+            <nav>
+                <a href="index.html">Accueil</a>
+                <a href="index.html#apropos">À Propos</a>
+                <a href="boissons.html" class="active">Boissons</a>
+                <a href="plats.html">Plats</a>
+                <a href="index.html#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Bouton téléphone -->
+    <a href="tel:+32" class="phone-btn">☎</a>
+    
+    <!-- Titre Page -->
+    <div class="page-title">
+        <h1>NOS BOISSONS</h1>
+        <p>Sélection Premium • Cocktails & Softs Maison</p>
+    </div>
+    
+    <!-- Menu -->
+    <div class="menu-container">
+        
+        <!-- BOISSONS CHAUDES -->
+        <div class="menu-section">
+            <h2 class="section-title">Boissons Chaudes</h2>
+            <div class="menu-grid">
+                <div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Café</span>
+                            <span class="item-price">3,50€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Décaféiné</span>
+                            <span class="item-price">3,50€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Espresso</span>
+                            <span class="item-price">3,50€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Cappuccino</span>
+                            <span class="item-price">4,20€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Latte Macchiato</span>
+                            <span class="item-price">4,20€</span>
+                        </div>
+                    </div>
+                    <div class="item-description">Supplément sirop disponible</div>
+                </div>
+                <div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Espresso Macchiato</span>
+                            <span class="item-price">3,50€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Chocolate Chaud</span>
+                            <span class="item-price">4,20€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Irish</span>
+                            <span class="item-price">10,00€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Thé</span>
+                            <span class="item-price">3,50€</span>
+                        </div>
+                    </div>
+                    <div class="item-description">Et ses variantes</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- APÉRITIFS -->
+        <div class="menu-section">
+            <h2 class="section-title">Apéritifs</h2>
+            <div class="menu-grid">
+                <div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Apérol Spritz</span>
+                            <span class="item-price">10,00€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Limoncello Spritz</span>
+                            <span class="item-price">10,00€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Campari Spritz</span>
+                            <span class="item-price">12,00€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Campari Orange</span>
+                            <span class="item-price">10,50€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Campari</span>
+                            <span class="item-price">9,00€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Kir</span>
+                            <span class="item-price">8,00€</span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Kir Cava</span>
+                            <span class="item-price">12,00€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Ricard</span>
+                            <span class="item-price">3,80€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Picon Vin Blanc</span>
+                            <span class="item-price">9,00€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Picon Bière</span>
+                            <span class="item-price">6,00€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Pinceau</span>
+                            <span class="item-price">8,00€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Porto Rouge</span>
+                            <span class="item-price">9,00€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Coupe de Cava</span>
+                            <span class="item-price">9,00€</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- SUGGESTIONS DU BAR -->
+        <div class="menu-section">
+            <h2 class="section-title">Suggestions du Bar</h2>
+            <div class="menu-grid">
+                <div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Apéro Maison</span>
+                            <span class="item-price">12,00€</span>
+                        </div>
+                        <div class="item-description">Porto Blanc et Tonic</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Berry Spritz</span>
+                            <span class="item-price">13,00€</span>
+                        </div>
+                        <div class="item-description">Spritz au Fruits Rouges</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>L'Opaque Martini</span>
+                            <span class="item-price">12,00€</span>
+                        </div>
+                        <div class="item-description">Espresso Martini Revisité</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Spicy Margarita</span>
+                            <span class="item-price">13,00€</span>
+                        </div>
+                        <div class="item-description">Margarita Piments Habanero</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Exotic Daïquiri</span>
+                            <span class="item-price">13,00€</span>
+                        </div>
+                        <div class="item-description">Daïquiri au Rhum Infusé à l'Ananas</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Berry Daïquiri</span>
+                            <span class="item-price">12,00€</span>
+                        </div>
+                        <div class="item-description">Daïquiri aux Fruits Rouges</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- COCKTAILS -->
+        <div class="menu-section">
+            <h2 class="section-title">Cocktails</h2>
+            <div class="menu-grid">
+                <div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Daïquiri</span>
+                            <span class="item-price">12,00€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Cuba Libre</span>
+                            <span class="item-price">12,00€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Négroni</span>
+                            <span class="item-price">13,00€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Margarita</span>
+                            <span class="item-price">13,00€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Mai Tai</span>
+                            <span class="item-price">13,00€</span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Les Mules</span>
+                            <span class="item-price">12,00€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Les Sour</span>
+                            <span class="item-price">12,00€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Tequila Sunrise</span>
+                            <span class="item-price">12,00€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Gin Fizz</span>
+                            <span class="item-price">12,00€</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ALCOOLS -->
+        <div class="menu-section">
+            <h2 class="section-title">Alcools</h2>
+            <div class="menu-grid">
+                <div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Rhum Blanc</span>
+                            <span class="item-price">8,00€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Rhum Brun</span>
+                            <span class="item-price">8,50€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Démon's Share</span>
+                            <span class="item-price">13,50€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Hendrick's Gin</span>
+                            <span class="item-price">14,00€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Rasberry Buss 509</span>
+                            <span class="item-price">12,50€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Marcelous Valéo</span>
+                            <span class="item-price">14,00€</span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Jack Daniel's</span>
+                            <span class="item-price">9,00€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>J&B Blended</span>
+                            <span class="item-price">9,00€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Johnnie Walker</span>
+                            <span class="item-price">9,00€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>The Glenlivet 18Y</span>
+                            <span class="item-price">15,50€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Vodka</span>
+                            <span class="item-price">9,00€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Tequila</span>
+                            <span class="item-price">9,00€</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- SOFTS MAISON -->
+        <div class="menu-section">
+            <h2 class="section-title">Softs Maison</h2>
+            <div class="menu-grid">
+                <div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Red Passion</span>
+                            <span class="item-price">4,50€</span>
+                        </div>
+                        <div class="item-description">Infusion Hibiscus & Menthe Fraîche</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Berry Punch</span>
+                            <span class="item-price">5,00€</span>
+                        </div>
+                        <div class="item-description">Infusion Fruits Rouges</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Classic Peach</span>
+                            <span class="item-price">5,00€</span>
+                        </div>
+                        <div class="item-description">Infusion Pêche</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Honey Ginger</span>
+                            <span class="item-price">4,20€</span>
+                        </div>
+                        <div class="item-description">Limonade Miel Gingembre</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Classic Lemon</span>
+                            <span class="item-price">4,20€</span>
+                        </div>
+                        <div class="item-description">Limonade Deux Citrons</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Le Fantastic</span>
+                            <span class="item-price">4,20€</span>
+                        </div>
+                        <div class="item-description">Limonade à l'Orange</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- SOFTS -->
+        <div class="menu-section">
+            <h2 class="section-title">Softs</h2>
+            <div class="menu-grid">
+                <div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Coca-Cola</span>
+                            <span class="item-price">3,90€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Coca-Cola Zero</span>
+                            <span class="item-price">3,90€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Fanta Orange</span>
+                            <span class="item-price">3,90€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Ice-Tea</span>
+                            <span class="item-price">3,90€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Schweppes Agrumes</span>
+                            <span class="item-price">3,90€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Schweppes Tonic</span>
+                            <span class="item-price">3,90€</span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Minutes Maid Pomme</span>
+                            <span class="item-price">4,00€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Minutes Maid Tomate</span>
+                            <span class="item-price">4,00€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Minutes Maid Orange</span>
+                            <span class="item-price">4,00€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Chaudfontaine 25cl</span>
+                            <span class="item-price">3,00€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Chaudfontaine 50cl</span>
+                            <span class="item-price">5,00€</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- BIÈRES -->
+        <div class="menu-section">
+            <h2 class="section-title">Bières</h2>
+            <div class="menu-grid">
+                <div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Jupiler</span>
+                            <span class="item-price">3,50€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Jupiler 0%</span>
+                            <span class="item-price">3,60€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Choulette Blonde</span>
+                            <span class="item-price">5,80€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Duvel</span>
+                            <span class="item-price">5,80€</span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Chimay Bleue</span>
+                            <span class="item-price">5,80€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Triple Karmeliet</span>
+                            <span class="item-price">5,80€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Orval</span>
+                            <span class="item-price">5,80€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Hoegaarden Blanche</span>
+                            <span class="item-price">3,80€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Kriek Lindemans</span>
+                            <span class="item-price">5,80€</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- DIGESTIFS -->
+        <div class="menu-section">
+            <h2 class="section-title">Digestifs</h2>
+            <div class="menu-grid">
+                <div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Amaretto Disaronno</span>
+                            <span class="item-price">8,00€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Baileys</span>
+                            <span class="item-price">8,00€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Calvados</span>
+                            <span class="item-price">9,00€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Cointreau</span>
+                            <span class="item-price">8,00€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Cognac</span>
+                            <span class="item-price">11,00€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Grand-Marnier</span>
+                            <span class="item-price">9,00€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Grappa</span>
+                            <span class="item-price">9,00€</span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Limoncello</span>
+                            <span class="item-price">8,00€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Mandarine Napoléon</span>
+                            <span class="item-price">11,00€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Sambuca</span>
+                            <span class="item-price">9,00€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Eau de Vilé</span>
+                            <span class="item-price">9,00€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Poire Williams</span>
+                            <span class="item-price">10,00€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Xanté</span>
+                            <span class="item-price">10,00€</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Le Pas-V. Tous droits réservés.</p>
+        <p>Restaurant Grill Franco-Belge • <a href="#">Mention légale</a></p>
+    </footer>
+</body>
+</html>

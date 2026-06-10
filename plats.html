@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plats - Le Pas-V</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=EB+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #0a0a0a;
+            color: #ffffff;
+            font-family: 'EB Garamond', serif;
+            line-height: 1.6;
+        }
+        
+        header {
+            position: sticky;
+            top: 0;
+            background-color: #0a0a0a;
+            border-bottom: 2px solid #c4935c;
+            padding: 15px 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            font-family: 'Cinzel', serif;
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: #c4935c;
+            text-decoration: none;
+        }
+        
+        nav {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+        
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+            font-family: 'Cinzel', serif;
+        }
+        
+        nav a:hover {
+            color: #c4935c;
+        }
+        
+        nav a.active {
+            color: #c4935c;
+            border-bottom: 1px solid #c4935c;
+            padding-bottom: 5px;
+        }
+        
+        .phone-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #c4935c;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 24px;
+            box-shadow: 0 4px 15px rgba(196, 147, 92, 0.4);
+            z-index: 99;
+            transition: all 0.3s;
+            color: #000;
+        }
+        
+        .phone-btn:hover {
+            background-color: #d4a574;
+            transform: scale(1.1);
+        }
+        
+        .page-title {
+            max-width: 1200px;
+            margin: 60px auto 40px;
+            padding: 0 20px;
+            text-align: center;
+        }
+        
+        .page-title h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 48px;
+            letter-spacing: 3px;
+            color: #c4935c;
+            margin-bottom: 10px;
+        }
+        
+        .page-title p {
+            font-style: italic;
+            color: #999;
+            font-size: 14px;
+        }
+        
+        .menu-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px 60px;
+        }
+        
+        .menu-section {
+            margin-bottom: 60px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #333;
+        }
+        
+        .menu-section:last-child {
+            border-bottom: none;
+        }
+        
+        .section-title {
+            font-family: 'Cinzel', serif;
+            font-size: 32px;
+            color: #c4935c;
+            margin-bottom: 30px;
+            text-align: center;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+        
+        .section-subtitle {
+            font-family: 'EB Garamond', serif;
+            font-size: 20px;
+            color: #c4935c;
+            font-style: italic;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #333;
+        }
+        
+        .menu-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        
+        .menu-grid.single-column {
+            grid-template-columns: 1fr;
+        }
+        
+        .menu-item {
+            margin-bottom: 20px;
+        }
+        
+        .item-name {
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        
+        .item-price {
+            color: #c4935c;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+        
+        .item-description {
+            font-size: 13px;
+            color: #999;
+            font-style: italic;
+            line-height: 1.4;
+        }
+        
+        footer {
+            background-color: #0a0a0a;
+            border-top: 2px solid #c4935c;
+            padding: 30px 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        footer p {
+            font-size: 12px;
+            color: #999;
+            margin: 5px 0;
+        }
+        
+        footer a {
+            color: #c4935c;
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        .allergies-note {
+            font-size: 12px;
+            color: #999;
+            margin-top: 30px;
+            text-align: center;
+            font-style: italic;
+        }
+        
+        @media (max-width: 768px) {
+            nav {
+                gap: 15px;
+            }
+            
+            nav a {
+                font-size: 12px;
+            }
+            
+            .menu-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .page-title h1 {
+                font-size: 36px;
+            }
+            
+            .section-title {
+                font-size: 24px;
+            }
+            
+            .phone-btn {
+                width: 55px;
+                height: 55px;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">LE PAS-V</a>
+            <nav>
+                <a href="index.html">Accueil</a>
+                <a href="index.html#apropos">À Propos</a>
+                <a href="boissons.html">Boissons</a>
+                <a href="plats.html" class="active">Plats</a>
+                <a href="index.html#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Bouton téléphone -->
+    <a href="tel:+32" class="phone-btn">☎</a>
+    
+    <!-- Titre Page -->
+    <div class="page-title">
+        <h1>NOTRE CUISINE</h1>
+        <p>Entrées • Viandes • Hamburgers • Salades • Desserts</p>
+    </div>
+    
+    <!-- Menu -->
+    <div class="menu-container">
+        
+        <!-- ENTRÉES -->
+        <div class="menu-section">
+            <h2 class="section-title">Entrées</h2>
+            <div class="menu-grid single-column">
+                <div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Apéro Gourmand</span>
+                            <span class="item-price">22,50€</span>
+                        </div>
+                        <div class="item-description">Assortiment de trois mignardes salées accompagné d'un verre</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Planche Mixte à Partager</span>
+                            <span class="item-price">21,00€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Houmous de Légumes</span>
+                            <span class="item-price">14,50€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Tataki de Saumon</span>
+                            <span class="item-price">17,50€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Croquette 1pc</span>
+                            <span class="item-price">9,50€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Croquettes 2pc</span>
+                            <span class="item-price">17,50€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Nos 4 Croquettes à Partager</span>
+                            <span class="item-price">34,00€</span>
+                        </div>
+                        <div class="item-description">Comté et Gruyère, Iberico, Homard, Crevettes grises</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Os à Moelle</span>
+                            <span class="item-price">17,00€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Scampis à l'Ail et Crème</span>
+                            <span class="item-price">17,50€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Scampis au Chorizo et Crème Tomate</span>
+                            <span class="item-price">17,50€</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- VIANDES -->
+        <div class="menu-section">
+            <h2 class="section-title">Viandes</h2>
+            <div class="menu-grid single-column">
+                <div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Pavé de Boeuf Irlandais 250gr</span>
+                            <span class="item-price">26,50€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Entrecôte Irlandaise 350gr</span>
+                            <span class="item-price">32,50€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Duo de Ribs de Porc</span>
+                            <span class="item-price">23,50€</span>
+                        </div>
+                        <div class="item-description">Cuisson Basse Température et Les Deux Marinades</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Ribs de Boeuf "Low & Slow"</span>
+                            <span class="item-price">29,50€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Noisette d'Agneau en Croûte</span>
+                            <span class="item-price">28,50€</span>
+                        </div>
+                        <div class="item-description">Dans sa Croûte de Pignons de Pin aux Herbes et Moutarde</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Pluma de Porc</span>
+                            <span class="item-price">24,50€</span>
+                        </div>
+                        <div class="item-description">Cuisson Basse Température</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Os à Moelle Rôti et Son Tartare de Boeuf au Couteau</span>
+                            <span class="item-price">30,50€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Magret de Canard sur Peau Croustillante</span>
+                            <span class="item-price">27,00€</span>
+                        </div>
+                        <div class="item-description">Crème de Porto, Croquettes, Légumes Vapeur</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- PLATS SPÉCIAUX -->
+        <div class="menu-section">
+            <h2 class="section-title">Plats du Chef</h2>
+            <div class="menu-grid single-column">
+                <div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Boulets à la Liégeoise</span>
+                            <span class="item-price">18,50€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Pain de Viande Sauce Miel Moutarde</span>
+                            <span class="item-price">20,50€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Américain Préparé Maison</span>
+                            <span class="item-price">19,50€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Tartare de Boeuf du Chef</span>
+                            <span class="item-price">22,50€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Tartare de Saumon</span>
+                            <span class="item-price">26,50€</span>
+                        </div>
+                        <div class="item-description">Guacamole, Pommes, Aneth et Échalotes</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Thon Rouge Snacké Teriyaki et Pesto de Pistaches</span>
+                            <span class="item-price">31,50€</span>
+                        </div>
+                        <div class="item-description">Légumes Vapeur et Pommes Grenailles</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Les Pâtes du Chef</span>
+                            <span class="item-price">20,50€</span>
+                        </div>
+                        <div class="item-description">Version Végétarienne Disponible</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- HAMBURGERS -->
+        <div class="menu-section">
+            <h2 class="section-title">Hamburgers</h2>
+            <div class="menu-grid single-column">
+                <div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Le Pas-V Burger</span>
+                            <span class="item-price">21,50€</span>
+                        </div>
+                        <div class="item-description">Boeuf, Sauce Maison, Cheddar, Oignons Pickles et Frits, Cornichons, Tomates, Salade</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Le Trappeur</span>
+                            <span class="item-price">22,00€</span>
+                        </div>
+                        <div class="item-description">Boeuf, Sauce Gribiche, Bacon, Fromage d'Abbaye, Oignons, Pickles et Frits, Cornichons, Tomates, Salade</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>L'Effiloché BBQ</span>
+                            <span class="item-price">21,00€</span>
+                        </div>
+                        <div class="item-description">Porc Effiloché BBQ, Mayo Chimichuri, Fromage d'Abbaye, Oignons Pickles et Frits, Cornichons, Tomates, Salade</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Burger Chicken</span>
+                            <span class="item-price">20,50€</span>
+                        </div>
+                        <div class="item-description">Poulet Désossé Smasher, Mayo Chimichuri, Cheddar, Oignons Pickles et Frits, Cornichons, Tomates, Salade</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- SAUCES & ACCOMPAGNEMENTS -->
+        <div class="menu-section">
+            <h2 class="section-title">Nos Sauces & Accompagnements</h2>
+            <div class="menu-grid">
+                <div>
+                    <div class="section-subtitle">Nos Sauces Froides</div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span></span>
+                            <span class="item-price">2,50€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Beurre du Chef</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Chimichuri</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>La Pas-V</span>
+                        </div>
+                        <div class="item-description">Légumes Grillés et Fond de Boeuf</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Sauce Reaper</span>
+                        </div>
+                        <div class="item-description">Sauce Piquante à Base de Piment Rouge</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Mayo Chimichuri</span>
+                        </div>
+                        <div class="item-description">Mayonnaise avec Persillade</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Barbecue</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Mayo Curry Wasabi</span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="section-subtitle">Nos Sauces Chaudes</div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span></span>
+                            <span class="item-price">3,50€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Sauce Maison</span>
+                        </div>
+                        <div class="item-description">Crème de Porto</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Poivre Crème</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Archduc</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Béarnaise</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Choron</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Roquefort</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Miel Moutarde</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ACCOMPAGNEMENTS -->
+        <div class="menu-section">
+            <h2 class="section-title">Accompagnements</h2>
+            <div class="menu-grid">
+                <div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Frites</span>
+                            <span class="item-price">3,50€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Pommes Grenailles</span>
+                            <span class="item-price">3,50€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Croquettes</span>
+                            <span class="item-price">5,00€</span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Gratin Dauphinois</span>
+                            <span class="item-price">5,00€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Poêlée de Légumes</span>
+                            <span class="item-price">5,00€</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- PLATS ENFANTS -->
+        <div class="menu-section">
+            <h2 class="section-title">Plats Enfants</h2>
+            <div class="menu-grid single-column">
+                <div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Tenders de Poulet Crispy, Compote Frites</span>
+                            <span class="item-price">12,00€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Boulettes Sauce Tomate Frites</span>
+                            <span class="item-price">11,00€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Cheeseburger Frites</span>
+                            <span class="item-price">12,00€</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- SALADES -->
+        <div class="menu-section">
+            <h2 class="section-title">Salades</h2>
+            <div class="menu-grid single-column">
+                <div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Salade de Boeuf Tataki</span>
+                            <span class="item-price">21,50€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Version Saumon Tataki</span>
+                            <span class="item-price">18,50€</span>
+                        </div>
+                        <div class="item-description">Mange-tout, Petits Pois, Oignons Rouges, Oignons Pickles, Graine de Sésame et Vinaigrette au Gingembre</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Salade de Légumes Grillés</span>
+                            <span class="item-price">16,50€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Toast de Fromage de Chèvres et Miel</span>
+                            <span class="item-price">+1,50€</span>
+                        </div>
+                        <div class="item-description">Farandole de Légumes Grillés avec Vinaigrette au Graine de Sésame</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- DESSERTS -->
+        <div class="menu-section">
+            <h2 class="section-title">Desserts</h2>
+            <div class="menu-grid">
+                <div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Coupe Colonel</span>
+                            <span class="item-price">10,50€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Glace Caramel Beurre Salé</span>
+                            <span class="item-price">9,50€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Brésilienne</span>
+                            <span class="item-price">9,50€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Milk-shake Bueno</span>
+                            <span class="item-price">9,50€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Dame Blanche</span>
+                            <span class="item-price">9,50€</span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Tarte Tatin</span>
+                            <span class="item-price">11,00€</span>
+                        </div>
+                        <div class="item-description">Et sa boule de glace</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Crème Brûlée</span>
+                            <span class="item-price">11,00€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Moelleux au Chocolat</span>
+                            <span class="item-price">11,50€</span>
+                        </div>
+                        <div class="item-description">Et sa boule de glace</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Mousse au Chocolat</span>
+                            <span class="item-price">10,50€</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="allergies-note">
+            Liste d'allergènes disponible sur demande
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Le Pas-V. Tous droits réservés.</p>
+        <p>Restaurant Grill Franco-Belge • <a href="#">Mention légale</a></p>
+    </footer>
+</body>
+</html>
