@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nos Restaurants - Le Pas-V & Bébé, Chouchou et Moi</title>
+  <meta name="description" content="Découvrez nos restaurants grill franco-belges : deux établissements partageant la même tradition familiale à Wavre.">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=EB+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background-color: #0a0a0a; color: #fff; font-family: 'EB Garamond', serif; line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    header { position: sticky; top: 0; background-color: #0a0a0a; border-bottom: 2px solid #c4935c; padding: 15px 0; z-index: 100; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-family: 'Cinzel', serif; font-size: 28px; font-weight: 700; letter-spacing: 3px; color: #c4935c; }
+    nav { display: flex; gap: 30px; }
+    nav a { color: #fff; text-decoration: none; font-size: 14px; letter-spacing: 1px; font-family: 'Cinzel', serif; transition: color 0.3s; }
+    nav a:hover { color: #c4935c; }
+    .call-btn { position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; background-color: #c4935c; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 24px; box-shadow: 0 4px 15px rgba(196, 147, 92, 0.4); z-index: 99; color: #000; transition: transform 0.3s; }
+    .call-btn:hover { transform: scale(1.1); }
+    
+    .page-intro { background: linear-gradient(180deg, #0a0a0a 0%, #111 100%); border-bottom: 2px solid #c4935c; padding: 60px 20px; margin-bottom: 60px; }
+    .intro-content { max-width: 1200px; margin: 0 auto; text-align: center; }
+    .intro-content h1 { font-family: 'Cinzel', serif; font-size: 48px; letter-spacing: 3px; color: #c4935c; margin-bottom: 20px; }
+    .intro-content p { font-size: 16px; color: #ddd; line-height: 1.8; max-width: 700px; margin: 0 auto 30px; }
+    .intro-subtitle { font-family: 'Cinzel', serif; font-size: 20px; color: #c4935c; letter-spacing: 2px; font-weight: 600; }
+    
+    .restaurants-container { max-width: 1200px; margin: 0 auto; padding: 0 20px 60px; }
+    .restaurants-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 60px; }
+    
+    .restaurant-card { background-color: #111; border: 2px solid #c4935c; border-radius: 8px; padding: 40px; position: relative; }
+    .restaurant-card h2 { font-family: 'Cinzel', serif; font-size: 32px; color: #c4935c; margin-bottom: 10px; letter-spacing: 2px; }
+    .restaurant-tagline { font-size: 13px; color: #999; font-style: italic; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid #333; }
+    
+    .info-section { margin-bottom: 30px; }
+    .info-title { font-family: 'Cinzel', serif; font-size: 16px; color: #c4935c; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px; }
+    .info-content { font-size: 14px; color: #ddd; line-height: 1.8; }
+    .info-content p { margin-bottom: 8px; }
+    .info-content a { color: #c4935c; text-decoration: none; transition: opacity 0.3s; }
+    .info-content a:hover { opacity: 0.8; text-decoration: underline; }
+    
+    .hours-table { width: 100%; font-size: 13px; }
+    .hours-table tr { border-bottom: 1px solid #333; }
+    .hours-table td { padding: 8px 0; }
+    .hours-table td:first-child { color: #c4935c; font-weight: 600; width: 40%; }
+    .hours-table td:last-child { color: #ddd; text-align: right; }
+    
+    .cta-btn { display: inline-block; padding: 12px 40px; background-color: #c4935c; color: #0a0a0a; font-family: 'Cinzel', serif; font-size: 14px; letter-spacing: 1px; text-decoration: none; border-radius: 4px; transition: opacity 0.3s; font-weight: 600; margin-top: 20px; }
+    .cta-btn:hover { opacity: 0.85; }
+    
+    .visit-cta { text-align: center; padding: 40px; background-color: #111; border: 1px solid #c4935c; border-radius: 8px; margin-bottom: 40px; }
+    .visit-cta p { font-size: 16px; color: #ddd; margin-bottom: 20px; }
+    
+    footer { background-color: #0a0a0a; border-top: 2px solid #c4935c; padding: 30px 20px; text-align: center; margin-top: 60px; }
+    footer p { font-size: 12px; color: #999; margin: 5px 0; }
+    footer a { color: #c4935c; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    
+    @media (max-width: 768px) {
+      .restaurants-grid { grid-template-columns: 1fr; }
+      nav { gap: 15px; }
+      nav a { font-size: 12px; }
+      .intro-content h1 { font-size: 36px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="logo">LE PAS-V</div>
+      <nav>
+        <a href="index.html">Accueil</a>
+        <a href="boissons.html">Boissons</a>
+        <a href="plats.html">Plats</a>
+        <a href="restaurants.html">Nos Restaurants</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <a href="tel:010878145" class="call-btn" aria-label="Appeler">☎</a>
+
+  <section class="page-intro">
+    <div class="intro-content">
+      <h1>Nos Restaurants</h1>
+      <p>Deux établissements partageant la même passion pour la gastronomie franco-belge et la tradition familiale</p>
+      <div class="intro-subtitle">Une même famille, deux univers culinaires</div>
+    </div>
+  </section>
+
+  <section class="restaurants-container">
+    <div class="restaurants-grid">
+      <!-- LE PAS-V -->
+      <div class="restaurant-card">
+        <h2>Le Pas-V</h2>
+        <p class="restaurant-tagline">Restaurant Grill Franco-Belge</p>
+        
+        <div class="info-section">
+          <div class="info-title">Adresse</div>
+          <div class="info-content">
+            <p>Rue Charles Sambon 14</p>
+            <p>1300 Wavre, Belgique</p>
+          </div>
+        </div>
+        
+        <div class="info-section">
+          <div class="info-title">Horaires d'Ouverture</div>
+          <table class="hours-table">
+            <tr>
+              <td>Lundi</td>
+              <td>Fermé</td>
+            </tr>
+            <tr>
+              <td>Mardi</td>
+              <td>Fermé</td>
+            </tr>
+            <tr>
+              <td>Mercredi</td>
+              <td>11h30 - 14h30 / 18h30 - 22h30</td>
+            </tr>
+            <tr>
+              <td>Jeudi</td>
+              <td>18h30 - 22h30</td>
+            </tr>
+            <tr>
+              <td>Vendredi</td>
+              <td>11h30 - 14h30 / 18h30 - 22h30</td>
+            </tr>
+            <tr>
+              <td>Samedi</td>
+              <td>11h30 - 14h30 / 18h30 - 23h00</td>
+            </tr>
+            <tr>
+              <td>Dimanche</td>
+              <td>Fermé</td>
+            </tr>
+          </table>
+        </div>
+        
+        <a href="contact.html" class="cta-btn">Réserver une Table</a>
+        <a href="tel:010878145" class="cta-btn">Appeler: 010 87 81 45</a>
+        <a href="https://www.google.com/search?sca_esv=c2bd79d217e3461f&q=le+pas+v+&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOROikOk6fs9VQ66Wv5-3AZSfENBEMKj-U4Szqe6GLe2WHDNswbXzAa5M9llQJLO6xfZJysw%3D&uds=ALYpb_ns7xV2GWiKlz0EfJmB6naEF80up7IZ6L0zqzURUNDDQ-4Yvh64RjLVmRWqqiYs4BZHemvmpQD7W1-RUhtsHJs6oQkjTIem5pMfHlYUqyxPXaswO1g&sa=X&ved=2ahUKEwjW3I_9l_2UAxVo5AIHHermNe0Q3PALegQIGRAE&biw=2320&bih=1196&dpr=1.1" target="_blank" class="cta-btn">Google Avis</a>
+      </div>
+
+      <!-- BÉBÉ, CHOUCHOU ET MOI -->
+      <div class="restaurant-card">
+        <h2>Bébé, Chouchou<br>et Moi</h2>
+        <p class="restaurant-tagline">Restaurant Convivial & Chaleureux</p>
+        
+        <div class="info-section">
+          <div class="info-title">Adresse</div>
+          <div class="info-content">
+            <p>Rue de Bruxelles 4</p>
+            <p>1300 Wavre, Belgique</p>
+          </div>
+        </div>
+        
+        <div class="info-section">
+          <div class="info-title">Horaires d'Ouverture</div>
+          <table class="hours-table">
+            <tr>
+              <td>Lundi</td>
+              <td>18h - 22h</td>
+            </tr>
+            <tr>
+              <td>Mardi</td>
+              <td>Fermé</td>
+            </tr>
+            <tr>
+              <td>Mercredi</td>
+              <td>11h - 15h / 18h - 22h</td>
+            </tr>
+            <tr>
+              <td>Jeudi</td>
+              <td>18h - 22h</td>
+            </tr>
+            <tr>
+              <td>Vendredi</td>
+              <td>18h - 22h</td>
+            </tr>
+            <tr>
+              <td>Samedi</td>
+              <td>11h - 15h / 18h - 22h</td>
+            </tr>
+            <tr>
+              <td>Dimanche</td>
+              <td>11h - 15h / 18h - 22h</td>
+            </tr>
+          </table>
+        </div>
+        
+        <a href="https://bebechouchouetmoi.be" target="_blank" class="cta-btn">Réserver une Table</a>
+        <a href="tel:010241755" class="cta-btn">Appeler: 010 24 17 55</a>
+        <a href="https://www.google.com/search?sca_esv=b310fc7f82cd21bc&q=bebe+chouchou+et+moi&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOXljmxfXm93mhijFOuOHFhCXLbCGtNYAwc-sDG6gzKh6DT16WVKAxaaS_UqpbSkAYYCS5jI%3D&uds=ALYpb_lLt3rF4OntvAcKw6YR8l5Vfaayei_hdpMov9R6SbRo0sgWHzKdKjNR91lojSgXUAmCW02rjB23sw-fguBUiAeW7Srm6YRHv4O1dBYqPpLB7vrHZS4&sa=X&ved=2ahUKEwjb9Pm3nf2UAxU_YPEDHS35IBMQ3PALegQIFxAE&biw=2560&bih=1279&dpr=1" target="_blank" class="cta-btn">Google Avis</a>
+      </div>
+    </div>
+
+    <div class="visit-cta">
+      <p style="font-family: 'Cinzel', serif; font-size: 20px; color: #c4935c; margin-bottom: 15px;">Nous vous accueillons dans nos deux établissements</p>
+      <p>Que vous choisissiez Le Pas-V ou Bébé, Chouchou et Moi, vous découvrirez la même passion pour la cuisine généreuse et le service chaleureux qui caractérisent notre famille.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Le Pas-V & Bébé, Chouchou et Moi. Tous droits réservés.</p>
+    <p>Restaurants Franco-Belges • <a href="contact.html">Contact</a></p>
+  </footer>
+</body>
+</html>
