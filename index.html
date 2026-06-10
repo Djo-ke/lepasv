@@ -21,6 +21,11 @@
     nav { display: flex; gap: 30px; }
     nav a { color: #fff; text-decoration: none; font-size: 14px; letter-spacing: 1px; font-family: 'Cinzel', serif; transition: color 0.3s; }
     nav a:hover { color: #c4935c; }
+    .static-menu { display: flex; justify-content: center; gap: 40px; background: linear-gradient(90deg, #111 0%, #1a1a1a 50%, #111 100%); padding: 18px 20px; border-bottom: 1px solid #c4935c; position: relative; }
+    .static-menu a { position: relative; color: #fff; font-family: 'Cinzel', serif; font-size: 14px; letter-spacing: 2px; padding: 6px 4px; transition: color 0.3s; }
+    .static-menu a::after { content: ''; position: absolute; left: 50%; bottom: 0; width: 0; height: 2px; background: #c4935c; transition: all 0.4s ease; transform: translateX(-50%); }
+    .static-menu a:hover { color: #c4935c; }
+    .static-menu a:hover::after { width: 100%; }
     .call-btn { position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; background-color: #c4935c; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 24px; box-shadow: 0 4px 15px rgba(196, 147, 92, 0.4); z-index: 99; color: #000; transition: transform 0.3s; }
     .call-btn:hover { transform: scale(1.1); }
     .hero { position: relative; height: 700px; display: flex; align-items: center; justify-content: center; background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('https://id-preview--943dbc52-5e7e-4357-ba44-c6ddcf904cfd.lovable.app/__l5e/assets-v1/b6c45104-e70a-421a-a1ed-c93f762bca3d/facade.webp'); background-size: cover; background-position: center; border-bottom: 2px solid #c4935c; text-align: center; }
@@ -57,15 +62,15 @@
   <header>
     <div class="container">
       <div class="logo">LE PAS-V</div>
-      <nav>
-        <a href="accueil.html">Accueil</a>
-        <a href="#apropos">À Propos</a>
-        <a href="boissons.html">Boissons</a>
-        <a href="plats.html">Plats</a>
-        <a href="contact.html">Contact</a>
-      </nav>
     </div>
   </header>
+
+  <nav class="static-menu">
+    <a href="accueil.html">Accueil</a>
+    <a href="boissons.html">Boissons</a>
+    <a href="plats.html">Plats</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 
   <a href="tel:010878145" class="call-btn" aria-label="Appeler">☎</a>
 
