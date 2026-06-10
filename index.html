@@ -17,7 +17,8 @@
     a { color: inherit; text-decoration: none; }
     header { position: sticky; top: 0; background-color: #0a0a0a; border-bottom: 2px solid #c4935c; padding: 15px 0; z-index: 100; }
     .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; }
-    .logo { font-family: 'Cinzel', serif; font-size: 28px; font-weight: 700; letter-spacing: 3px; color: #c4935c; }
+    .logo { font-family: 'Cinzel', serif; font-size: 28px; font-weight: 700; letter-spacing: 3px; color: #c4935c; transition: opacity 0.3s; }
+    .logo:hover { opacity: 0.8; }
     nav { display: flex; gap: 30px; }
     nav a { color: #fff; text-decoration: none; font-size: 14px; letter-spacing: 1px; font-family: 'Cinzel', serif; transition: color 0.3s; }
     nav a:hover { color: #c4935c; }
@@ -86,12 +87,11 @@
 <body>
   <header>
     <div class="container">
-      <div class="logo">LE PAS-V</div>
+      <a href="index.html" class="logo">LE PAS-V</a>
       <nav>
         <a href="index.html">Accueil</a>
         <a href="boissons.html">Boissons</a>
         <a href="plats.html">Plats</a>
-        <a href="restaurants.html">Restaurants</a>
         <a href="contact.html">Contact</a>
       </nav>
     </div>
