@@ -129,6 +129,16 @@
             margin-bottom: 60px;
         }
         
+        .contact-main {
+            margin-bottom: 60px;
+        }
+        
+        .contact-info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+        
         .contact-section h2 {
             font-family: 'Cinzel', serif;
             font-size: 28px;
@@ -138,7 +148,11 @@
         }
         
         .contact-info-block {
-            margin-bottom: 30px;
+            margin-bottom: 0;
+            padding: 20px;
+            background-color: rgba(196, 147, 92, 0.05);
+            border: 1px solid #c4935c;
+            border-radius: 4px;
         }
         
         .contact-info-block strong {
@@ -146,7 +160,7 @@
             font-size: 14px;
             color: #c4935c;
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 12px;
             letter-spacing: 1px;
         }
         
@@ -154,6 +168,11 @@
             font-size: 15px;
             color: #ddd;
             line-height: 1.8;
+            margin-bottom: 8px;
+        }
+        
+        .contact-info-block p:last-child {
+            margin-bottom: 0;
         }
         
         .contact-info-block a {
@@ -167,12 +186,8 @@
         }
         
         .hours-block {
-            border-left: 2px solid #c4935c;
+            border-left: none;
             padding-left: 20px;
-        }
-        
-        .hours-block p {
-            margin-bottom: 10px;
         }
         
         /* FORMULAIRE DE CONTACT */
@@ -240,16 +255,17 @@
         
         /* SECTION RÉSERVATION */
         .reservation-section {
-            background-color: #1a1a1a;
+            background: linear-gradient(135deg, #1a1a1a 0%, #111 100%);
             border: 2px solid #c4935c;
-            padding: 40px;
+            padding: 60px;
             margin-top: 60px;
             text-align: center;
+            border-radius: 4px;
         }
         
         .reservation-section h2 {
             font-family: 'Cinzel', serif;
-            font-size: 32px;
+            font-size: 36px;
             color: #c4935c;
             margin-bottom: 20px;
             letter-spacing: 2px;
@@ -257,13 +273,27 @@
         
         .reservation-section p {
             color: #ddd;
-            margin-bottom: 30px;
-            font-size: 15px;
+            margin-bottom: 40px;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+        
+        .barestho-container {
+            margin-top: 30px;
+            border-radius: 4px;
+            overflow: hidden;
+            background-color: #0a0a0a;
+        }
+        
+        .barestho-container iframe {
+            display: block;
+            width: 100%;
+            min-height: 700px;
         }
         
         .reservation-buttons {
             display: flex;
-            gap: 20px;
+            gap: 30px;
             justify-content: center;
             flex-wrap: wrap;
         }
@@ -271,7 +301,7 @@
         .reservation-btn {
             background-color: #c4935c;
             color: #000;
-            padding: 16px 35px;
+            padding: 16px 45px;
             border: none;
             font-family: 'Cinzel', serif;
             font-size: 14px;
@@ -282,12 +312,13 @@
             text-decoration: none;
             display: inline-block;
             text-transform: uppercase;
+            border-radius: 2px;
         }
         
         .reservation-btn:hover {
             background-color: #d4a574;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(196, 147, 92, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(196, 147, 92, 0.4);
         }
         
         /* Modal pour formulaire de réservation */
@@ -436,9 +467,8 @@
                 font-size: 12px;
             }
             
-            .contact-grid {
+            .contact-info-grid {
                 grid-template-columns: 1fr;
-                gap: 40px;
             }
             
             .page-title h1 {
@@ -447,6 +477,10 @@
             
             .reservation-section {
                 padding: 30px 20px;
+            }
+            
+            .barestho-container iframe {
+                min-height: 500px;
             }
             
             .reservation-buttons {
@@ -496,135 +530,45 @@
     
     <!-- Contenu Principal -->
     <div class="container">
-        <div class="contact-grid">
+        <div class="contact-main">
             <!-- Section Contact Info -->
             <div class="contact-section">
                 <h2>Nous Contacter</h2>
                 
-                <div class="contact-info-block">
-                    <strong>Téléphone</strong>
-                    <p><a href="tel:+3210878145">010 87 81 45</a></p>
+                <div class="contact-info-grid">
+                    <div class="contact-info-block">
+                        <strong>Téléphone</strong>
+                        <p><a href="tel:+3210878145">010 87 81 45</a></p>
+                    </div>
+                    
+                    <div class="contact-info-block">
+                        <strong>Email</strong>
+                        <p><a href="mailto:lepasv.restaurant@gmail.com">lepasv.restaurant@gmail.com</a></p>
+                    </div>
+                    
+                    <div class="contact-info-block">
+                        <strong>Adresse</strong>
+                        <p>Rue Charles Sambon 14<br>1300 Wavre<br>Belgique</p>
+                    </div>
+                    
+                    <div class="contact-info-block">
+                        <strong>Horaires</strong>
+                        <p>Lundi: Fermé</p>
+                        <p>Mardi - Jeudi:<br>11h30 - 14h30 / 18h30 - 22h30</p>
+                        <p>Vendredi - Samedi:<br>11h30 - 14h30 / 18h30 - 23h00</p>
+                        <p>Dimanche: Fermé</p>
+                    </div>
                 </div>
-                
-                <div class="contact-info-block">
-                    <strong>Email</strong>
-                    <p><a href="mailto:lepasv.restaurant@gmail.com">lepasv.restaurant@gmail.com</a></p>
-                </div>
-                
-                <div class="contact-info-block">
-                    <strong>Adresse</strong>
-                    <p>Rue Charles Sambon 14<br>1300 Wavre<br>Belgique</p>
-                </div>
-                
-                <div class="contact-info-block hours-block">
-                    <strong>Horaires</strong>
-                    <p>Lun-Jeu:<br>11h30 - 14h30 / 18h30 - 22h30</p>
-                    <p>Ven-Sam:<br>11h30 - 14h30 / 18h30 - 23h00</p>
-                    <p>Dimanche:<br>Fermé</p>
-                </div>
-            </div>
-            
-            <!-- Formulaire de Contact -->
-            <div class="contact-section">
-                <h2>Formulaire de Contact</h2>
-                <form id="contactForm">
-                    <div class="form-group">
-                        <label for="name">Nom *</label>
-                        <input type="text" id="name" name="name" required placeholder="Votre nom">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Email *</label>
-                        <input type="email" id="email" name="email" required placeholder="votre.email@exemple.com">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="phone">Téléphone</label>
-                        <input type="tel" id="phone" name="phone" placeholder="+32 XXX XX XX XX">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="subject">Sujet *</label>
-                        <input type="text" id="subject" name="subject" required placeholder="Sujet de votre message">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="message">Message *</label>
-                        <textarea id="message" name="message" required placeholder="Votre message..."></textarea>
-                    </div>
-                    
-                    <button type="submit" class="submit-btn">Envoyer</button>
-                </form>
             </div>
         </div>
         
         <!-- Section Réservation -->
         <div class="reservation-section">
             <h2>Réserver une Table</h2>
-            <p>Réservez facilement votre table via notre système de réservation professionnel.</p>
-            <div class="reservation-buttons">
-                <button onclick="openReservationModal()" class="reservation-btn">Réserver en Ligne</button>
-                <a href="tel:+3210878145" class="reservation-btn">Appeler</a>
+            <p>Réservez facilement votre table directement en ligne</p>
+            <div class="barestho-container">
+                <iframe id="barestho-widget" src="about:blank" width="100%" height="700" frameborder="0" allowfullscreen="" style="border: none;"></iframe>
             </div>
-        </div>
-    </div>
-    
-    <!-- Modal Réservation -->
-    <div id="reservationModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeReservationModal()">&times;</span>
-            <h2 class="modal-title">Réserver une Table</h2>
-            <form id="reservationForm">
-                <div class="modal-form-group">
-                    <label for="resName">Nom *</label>
-                    <input type="text" id="resName" name="name" required>
-                </div>
-                
-                <div class="modal-form-group">
-                    <label for="resEmail">Email *</label>
-                    <input type="email" id="resEmail" name="email" required>
-                </div>
-                
-                <div class="modal-form-group">
-                    <label for="resPhone">Téléphone *</label>
-                    <input type="tel" id="resPhone" name="phone" required>
-                </div>
-                
-                <div class="modal-form-group">
-                    <label for="resDate">Date *</label>
-                    <input type="date" id="resDate" name="date" required>
-                </div>
-                
-                <div class="modal-form-group">
-                    <label for="resTime">Heure *</label>
-                    <input type="time" id="resTime" name="time" required>
-                </div>
-                
-                <div class="modal-form-group">
-                    <label for="resGuests">Nombre de personnes *</label>
-                    <select id="resGuests" name="guests" required>
-                        <option value="">Sélectionnez</option>
-                        <option value="1">1 personne</option>
-                        <option value="2">2 personnes</option>
-                        <option value="3">3 personnes</option>
-                        <option value="4">4 personnes</option>
-                        <option value="5">5 personnes</option>
-                        <option value="6">6 personnes</option>
-                        <option value="7">7 personnes</option>
-                        <option value="8">8 personnes</option>
-                        <option value="9">9 personnes</option>
-                        <option value="10">10 personnes</option>
-                        <option value="+10">Plus de 10</option>
-                    </select>
-                </div>
-                
-                <div class="modal-form-group">
-                    <label for="resComments">Commentaires</label>
-                    <textarea id="resComments" name="comments" placeholder="Allergies, occasions spéciales, etc."></textarea>
-                </div>
-                
-                <button type="submit" class="modal-submit">Confirmer la Réservation</button>
-            </form>
         </div>
     </div>
     
@@ -635,65 +579,7 @@
     </footer>
     
     <script>
-        // Gestion du formulaire de contact
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
-            
-            // Construire l'email mailto
-            const mailtoLink = `mailto:lepasv.restaurant@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Nom: ${name}\nEmail: ${email}\nTéléphone: ${phone}\n\n${message}`)}`;
-            
-            window.location.href = mailtoLink;
-        });
-        
-        // Gestion du modal de réservation
-        const reservationModal = document.getElementById('reservationModal');
-        
-        function openReservationModal() {
-            reservationModal.style.display = 'block';
-        }
-        
-        function closeReservationModal() {
-            reservationModal.style.display = 'none';
-        }
-        
-        window.onclick = function(event) {
-            if (event.target === reservationModal) {
-                reservationModal.style.display = 'none';
-            }
-        }
-        
-        // Gestion du formulaire de réservation
-        document.getElementById('reservationForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const name = document.getElementById('resName').value;
-            const email = document.getElementById('resEmail').value;
-            const phone = document.getElementById('resPhone').value;
-            const date = document.getElementById('resDate').value;
-            const time = document.getElementById('resTime').value;
-            const guests = document.getElementById('resGuests').value;
-            const comments = document.getElementById('resComments').value;
-            
-            // Construire l'email de réservation
-            const subject = `Demande de réservation - ${date} à ${time}`;
-            const body = `Demande de réservation:\n\nNom: ${name}\nEmail: ${email}\nTéléphone: ${phone}\nDate: ${date}\nHeure: ${time}\nNombre de personnes: ${guests}\nCommentaires: ${comments}`;
-            
-            const mailtoLink = `mailto:lepasv.restaurant@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-            
-            window.location.href = mailtoLink;
-            
-            // Fermer le modal après l'envoi
-            setTimeout(() => {
-                closeReservationModal();
-                document.getElementById('reservationForm').reset();
-            }, 500);
-        });
+        // Scripts optionnels (pas nécessaire pour cette version simplifiée)
     </script>
 </body>
 </html>
