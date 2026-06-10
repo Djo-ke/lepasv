@@ -53,10 +53,12 @@
     .horaires-header { margin-bottom: 50px; text-align: center; }
     .horaires-header h2 { font-family: 'Cinzel', serif; font-size: 42px; color: #c4935c; margin-bottom: 15px; letter-spacing: 3px; }
     .horaires-subtitle { font-size: 16px; color: #ddd; letter-spacing: 1px; font-style: italic; }
-    .horaires-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 15px; }
+    .horaires-grid { display: grid; grid-template-columns: repeat(8, 1fr); gap: 15px; }
     .horaire-item { text-align: center; padding: 20px; border-radius: 4px; background-color: #c4935c; }
     .horaire-item strong { font-family: 'Cinzel', serif; font-size: 14px; color: #000; display: block; margin-bottom: 15px; letter-spacing: 1px; }
     .horaire-item p { font-size: 14px; color: #000; line-height: 1.8; }
+    .horaire-item.reservation { background-color: #0a0a0a; border: 2px solid #c4935c; display: flex; align-items: center; justify-content: center; padding: 20px; }
+    .horaire-item.reservation a { color: #c4935c; font-family: 'Cinzel', serif; font-size: 14px; font-weight: 600; text-decoration: none; display: block; text-align: center; }
     .avis { background-color: #0a0a0a; padding: 60px 20px; margin-top: 60px; border-bottom: 2px solid #c4935c; }
     .avis-inner { max-width: 1200px; margin: 0 auto; }
     .avis h2 { font-family: 'Cinzel', serif; font-size: 36px; color: #c4935c; margin-bottom: 40px; text-align: center; letter-spacing: 3px; }
@@ -191,6 +193,9 @@
         <div class="horaire-item">
           <strong>Dimanche</strong>
           <p>Fermé</p>
+        </div>
+        <div class="horaire-item reservation">
+          <a href="tel:010878145">Vous voulez<br>réserver?</a>
         </div>
       </div>
     </div>
