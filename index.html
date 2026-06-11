@@ -28,14 +28,8 @@
     .hero h1 { font-family: 'Cinzel', serif; font-size: 72px; font-weight: 700; letter-spacing: 5px; margin-bottom: 20px; color: #c4935c; }
     .hero p { font-size: 20px; letter-spacing: 2px; font-weight: 300; margin-bottom: 40px; }
     .hero-actions { display: flex; gap: 20px; justify-content: center; }
-    .hero-btn { padding: 12px 40px; border: 2px solid #c4935c; color: #c4935c; font-family: 'Cinzel', serif; font-size: 14px; letter-spacing: 1px; text-decoration: none; transition: all 0.3s; background-color: transparent; animation: blink 4s ease-in-out infinite; }
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.3; }
-    }
-    .hero-btn:nth-child(1) { animation-delay: 0s; }
-    .hero-btn:nth-child(2) { animation-delay: 1.3s; }
-    .hero-btn:nth-child(3) { animation-delay: 2.6s; }
+    .hero-btn { padding: 12px 40px; border: 2px solid #c4935c; color: #c4935c; font-family: 'Cinzel', serif; font-size: 14px; letter-spacing: 1px; text-decoration: none; transition: all 0.3s; background-color: transparent; }
+    .hero-btn:nth-child(2) { background-color: #c4935c; color: #0a0a0a; }
     .hero-btn:hover { background-color: #c4935c; color: #0a0a0a; }
     .about { max-width: 1200px; margin: 60px auto; padding: 0 20px; border-bottom: 2px solid #c4935c; padding-bottom: 60px; }
     .about h2 { font-family: 'Cinzel', serif; font-size: 36px; color: #c4935c; margin-bottom: 40px; text-align: center; letter-spacing: 3px; }
@@ -64,8 +58,12 @@
     .horaire-item { text-align: center; padding: 20px; border-radius: 4px; background-color: #c4935c; }
     .horaire-item strong { font-family: 'Cinzel', serif; font-size: 14px; color: #000; display: block; margin-bottom: 15px; letter-spacing: 1px; }
     .horaire-item p { font-size: 14px; color: #000; line-height: 1.8; }
-    .horaire-item.reservation { background-color: #0a0a0a; border: 2px solid #c4935c; display: flex; align-items: center; justify-content: center; padding: 20px; }
-    .horaire-item.reservation a { color: #c4935c; font-family: 'Cinzel', serif; font-size: 14px; font-weight: 600; text-decoration: none; display: block; text-align: center; }
+    .horaire-item.reservation { background-color: #c4935c; border: 2px solid #c4935c; display: flex; align-items: center; justify-content: center; padding: 20px; animation: slowBlink 5s ease-in-out infinite; }
+    @keyframes slowBlink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+    .horaire-item.reservation a { color: #0a0a0a; font-family: 'Cinzel', serif; font-size: 14px; font-weight: 600; text-decoration: none; display: block; text-align: center; }
     .avis { background-color: #0a0a0a; padding: 60px 20px; margin-top: 60px; border-bottom: 2px solid #c4935c; }
     .avis-inner { max-width: 1200px; margin: 0 auto; }
     .avis h2 { font-family: 'Cinzel', serif; font-size: 36px; color: #c4935c; margin-bottom: 40px; text-align: center; letter-spacing: 3px; }
