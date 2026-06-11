@@ -239,6 +239,81 @@
             }
         }
     </style>
+
+<style>
+.lang-switch{display:inline-flex;gap:6px;margin-left:20px;align-items:center}
+.lang-switch button{background:transparent;border:1px solid #c4935c;color:#c4935c;
+  font-family:'Cinzel',serif;font-size:11px;letter-spacing:1px;padding:5px 9px;
+  cursor:pointer;border-radius:2px;transition:all .25s}
+.lang-switch button:hover{background:#c4935c;color:#0a0a0a}
+.lang-switch button.active{background:#c4935c;color:#0a0a0a}
+@media (max-width:768px){.lang-switch{margin-left:8px}.lang-switch button{padding:4px 6px;font-size:10px}}
+</style>
+<script>
+window.LEPASV_I18N = {"Accueil": ["Home", "Home"], "ACCUEIL": ["HOME", "HOME"], "Boissons": ["Dranken", "Drinks"], "BOISSONS": ["DRANKEN", "DRINKS"], "Plats": ["Gerechten", "Dishes"], "PLATS": ["GERECHTEN", "DISHES"], "VINS": ["WIJNEN", "WINES"], "Contact": ["Contact", "Contact"], "CONTACT": ["CONTACT", "CONTACT"], "RESTAURANT • GRILL": ["RESTAURANT • GRILL", "RESTAURANT • GRILL"], "Notre Carte": ["Onze Kaart", "Our Menu"], "Réservation": ["Reserveren", "Booking"], "Réserver une Table": ["Een Tafel Reserveren", "Book a Table"], "Réservez facilement votre table directement en ligne": ["Reserveer eenvoudig uw tafel rechtstreeks online", "Easily book your table directly online"], "Qui Sommes-Nous": ["Wie Zijn Wij", "Who We Are"], "Touche du Chef": ["Toets van de Chef", "Chef's Touch"], "Équipe Passionnée": ["Gepassioneerd Team", "Passionate Team"], "Qualité Exceptionnelle": ["Uitzonderlijke Kwaliteit", "Exceptional Quality"], "Chaque pièce de viande est soigneusement sélectionnée par notre Chef, puis grillée à la perfection pour mettre en valeur le savoir-faire franco-belge à travers des recettes authentiques et audacieuses.": ["Elk stuk vlees wordt zorgvuldig geselecteerd door onze Chef en perfect gegrild om de Frans-Belgische vakkennis te tonen door middel van authentieke en gedurfde recepten.", "Each cut of meat is carefully selected by our Chef and grilled to perfection to showcase Franco-Belgian craftsmanship through authentic, bold recipes."], "Notre équipe, chaleureuse et attentionnée, est là pour vous offrir une expérience conviviale. Dès votre arrivée, vous serez accueilli comme un membre de la famille.": ["Ons warme en attente team biedt u een gezellige ervaring. Vanaf het moment dat u binnenkomt, wordt u verwelkomd als een familielid.", "Our warm, attentive team is here to give you a welcoming experience. From the moment you arrive, you'll be greeted like family."], "Nous travaillons exclusivement avec des viandes locales de première qualité, choisies pour leur goût et leur traçabilité. Chaque bouchée reflète notre engagement envers une cuisine généreuse et savoureuse.": ["We werken uitsluitend met lokaal vlees van topkwaliteit, gekozen om hun smaak en traceerbaarheid. Elke hap weerspiegelt onze inzet voor een gulle en smaakvolle keuken.", "We work exclusively with premium local meats, chosen for their flavour and traceability. Every bite reflects our commitment to generous, flavourful cooking."], "Avis Clients": ["Klantenbeoordelingen", "Customer Reviews"], "Votre avis sur Google compte pour nous": ["Uw mening op Google telt voor ons", "Your Google review matters to us"], "Lire nos avis Google": ["Lees onze Google-recensies", "Read our Google reviews"], "\"Excellente expérience, viandes de qualité et équipe très accueillante. À recommander!\"": ["\"Uitstekende ervaring, kwaliteitsvlees en een zeer gastvrij team. Aanbevolen!\"", "\"Excellent experience, quality meats and a very welcoming team. Highly recommended!\""], "\"Restaurant chaleureux avec une cuisine généreuse. Le chef maîtrise parfaitement la grillade.\"": ["\"Gezellig restaurant met een gulle keuken. De chef beheerst het grillen perfect.\"", "\"Warm restaurant with generous cuisine. The chef has perfect mastery of grilling.\""], "\"Atmosphère conviviale, service attentif et plats délicieux. Nous reviendrons!\"": ["\"Gezellige sfeer, attente service en heerlijke gerechten. We komen terug!\"", "\"Friendly atmosphere, attentive service and delicious dishes. We will be back!\""], "Horaires d'Ouverture": ["Openingsuren", "Opening Hours"], "Venez nous voir quand il vous plaît": ["Kom langs wanneer het u uitkomt", "Come and see us whenever you like"], "Lundi": ["Maandag", "Monday"], "Mardi": ["Dinsdag", "Tuesday"], "Mercredi": ["Woensdag", "Wednesday"], "Jeudi": ["Donderdag", "Thursday"], "Vendredi": ["Vrijdag", "Friday"], "Samedi": ["Zaterdag", "Saturday"], "Dimanche": ["Zondag", "Sunday"], "Fermé": ["Gesloten", "Closed"], "Vous voulez": ["Wilt u", "Want to"], "réserver?": ["reserveren?", "book?"], "Tous droits réservés.": ["Alle rechten voorbehouden.", "All rights reserved."], "Restaurant Grill Franco-Belge": ["Frans-Belgisch Grillrestaurant", "Franco-Belgian Grill Restaurant"], "Mention légale": ["Wettelijke vermelding", "Legal notice"], "Contact & Réservation": ["Contact & Reservering", "Contact & Booking"], "Nous vous répondrons dans les meilleurs délais": ["We antwoorden u zo snel mogelijk", "We will get back to you as soon as possible"], "Nous Contacter": ["Contacteer Ons", "Contact Us"], "Téléphone": ["Telefoon", "Phone"], "Email": ["Email", "Email"], "Adresse": ["Adres", "Address"], "Horaires": ["Openingsuren", "Hours"], "Belgique": ["België", "Belgium"], "LA CARTE DES VINS": ["DE WIJNKAART", "WINE LIST"], "Sélection Premium • Vignobles de France": ["Premium Selectie • Wijngaarden van Frankrijk", "Premium Selection • Vineyards of France"], "Vins Maison": ["Huiswijnen", "House Wines"], "Le Verre": ["Het Glas", "Glass"], "Le Quart": ["Het Kwart", "Quarter Litre"], "Le Demi": ["De Halve", "Half Litre"], "Vins Rouges": ["Rode Wijnen", "Red Wines"], "Vins Blancs et Rosés": ["Witte & Rosé Wijnen", "White & Rosé Wines"], "Liste d'allergènes disponible sur demande": ["Allergenenlijst beschikbaar op aanvraag", "Allergen list available on request"], "Nos Entrées": ["Onze Voorgerechten", "Starters"], "Hamburgers": ["Hamburgers", "Burgers"], "Viandes": ["Vlees", "Meats"], "Nos Sauces": ["Onze Sauzen", "Our Sauces"], "Froides": ["Koud", "Cold"], "Chaudes": ["Warm", "Hot"], "Nos Accompagnements": ["Onze Bijgerechten", "Sides"], "Plats Enfants": ["Kindergerechten", "Kids' Meals"], "Salades": ["Salades", "Salads"], "Desserts": ["Desserts", "Desserts"], "Bières Pression": ["Bieren van het Vat", "Draught Beers"], "Bières Bouteille": ["Flesbieren", "Bottled Beers"], "Bières": ["Bieren", "Beers"], "Softs": ["Frisdranken", "Soft Drinks"], "Eaux": ["Water", "Waters"], "Cafés & Thés": ["Koffie & Thee", "Coffee & Tea"], "Cafés": ["Koffie", "Coffee"], "Apéritifs": ["Aperitieven", "Aperitifs"], "Cocktails": ["Cocktails", "Cocktails"], "Mocktails": ["Mocktails", "Mocktails"], "Alcools": ["Sterkedrank", "Spirits"], "Digestifs": ["Digestieven", "Digestives"], "Champagnes": ["Champagnes", "Champagnes"], "Version Végétarienne Disponible": ["Vegetarische Versie Beschikbaar", "Vegetarian Version Available"], "Cuisson Basse Température": ["Garing op Lage Temperatuur", "Slow Low-Temperature Cooking"], "Cuisson Basse Température et les Deux Marinades": ["Garing op lage temperatuur en de twee marinades", "Low-temperature cooking and the two marinades"], "Crème de Porto, Croquettes, Légumes Vapeur": ["Portoroom, kroketten, gestoomde groenten", "Port cream, croquettes, steamed vegetables"], "Légumes Vapeurs et Pommes Grenailles": ["Gestoomde groenten en krielaardappelen", "Steamed vegetables and baby potatoes"], "Dans sa Croûte de Pignons de Pin aux Herbes et Moutarde": ["In een korst van pijnboompitten met kruiden en mosterd", "In a pine-nut crust with herbs and mustard"], "Guacamole, Pommes, Aneth et Échalotes": ["Guacamole, appels, dille en sjalotten", "Guacamole, apples, dill and shallots"], "Boeuf, Sauce Maison, Cheddar, Oignons Pickles et Frits, Cornichons, Tomates, Salade": ["Rundvlees, huissaus, cheddar, gepekelde en gefrituurde uien, augurken, tomaten, salade", "Beef, house sauce, cheddar, pickled & fried onions, gherkins, tomatoes, salad"], "Boeuf, Sauce Gibier, Bacons, Fromage d'Abbaye, Oignons Pickles et Frits, Cornichons, Tomates, Salade": ["Rundvlees, wildsaus, bacon, abdijkaas, gepekelde en gefrituurde uien, augurken, tomaten, salade", "Beef, game sauce, bacon, abbey cheese, pickled & fried onions, gherkins, tomatoes, salad"], "Porc Effiloché BBQ, Mayo Chimichuri, Fromage d'Abbaye, Oignons Pickles et Frits, Cornichons, Tomates, Salade": ["Pulled pork BBQ, chimichurri-mayo, abdijkaas, gepekelde en gefrituurde uien, augurken, tomaten, salade", "BBQ pulled pork, chimichurri mayo, abbey cheese, pickled & fried onions, gherkins, tomatoes, salad"], "Poulet Désossé Smasher, Mayo Chimichuri, Cheddar, Oignons Pickles et Frits, Cornichons, Tomates, Salade": ["Smashed kip zonder been, chimichurri-mayo, cheddar, gepekelde en gefrituurde uien, augurken, tomaten, salade", "Boneless smashed chicken, chimichurri mayo, cheddar, pickled & fried onions, gherkins, tomatoes, salad"], "Légumes Grillés et Fond de Boeuf": ["Gegrilde groenten en rundsfond", "Grilled vegetables and beef jus"], "Sauce Piquante à Base de Piment Rouge": ["Pittige saus op basis van rode peper", "Spicy sauce made from red chilli"], "Mayonnaise avec Persillage": ["Mayonaise met peterselie", "Mayonnaise with parsley"], "Mange-tout, Petits Pois, Oignons Rouges, Oignons Pickles, Graine de Sésame et Vinaigrette Maison": ["Peultjes, erwtjes, rode uien, gepekelde uien, sesamzaadjes en huisvinaigrette", "Snow peas, peas, red onions, pickled onions, sesame seeds and house vinaigrette"], "Farandole de Légumes Grillés avec Vinaigrette au Graine de Sésame": ["Variatie van gegrilde groenten met sesamvinaigrette", "Medley of grilled vegetables with sesame vinaigrette"], "Daiquiri au Rhum Infusé à l'Ananas": ["Daiquiri met ananas-geïnfuseerde rum", "Daiquiri with pineapple-infused rum"], "Daiquiri au Fruits Rouges": ["Daiquiri met rode vruchten", "Red-berry daiquiri"], "Boissons - Le Pas-V": ["Dranken - Le Pas-V", "Drinks - Le Pas-V"], "Plats - Le Pas-V": ["Gerechten - Le Pas-V", "Dishes - Le Pas-V"], "Carte des Vins - Le Pas-V": ["Wijnkaart - Le Pas-V", "Wine List - Le Pas-V"], "Contact & Réservation - Le Pas-V": ["Contact & Reservering - Le Pas-V", "Contact & Booking - Le Pas-V"], "Le Pas-V — Restaurant Grill Franco-Belge": ["Le Pas-V — Frans-Belgisch Grillrestaurant", "Le Pas-V — Franco-Belgian Grill Restaurant"], "Restaurant grill franco-belge à l'esprit chaleureux : viandes locales grillées à la perfection par notre chef.": ["Frans-Belgisch grillrestaurant met een warme sfeer: lokaal vlees perfect gegrild door onze chef.", "Franco-Belgian grill restaurant with a warm spirit: local meats grilled to perfection by our chef."]};
+(function(){
+  function getLang(){ try { return localStorage.getItem('lepasv_lang') || 'fr'; } catch(e){ return 'fr'; } }
+  function setLang(l){ try { localStorage.setItem('lepasv_lang', l); } catch(e){} }
+  function applyLang(l){
+    var dict = window.LEPASV_I18N;
+    // Walk text nodes
+    var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
+    var nodes = []; var n;
+    while ((n = walker.nextNode())) nodes.push(n);
+    nodes.forEach(function(node){
+      if (!node.parentNode) return;
+      var tag = node.parentNode.nodeName;
+      if (tag === 'SCRIPT' || tag === 'STYLE') return;
+      if (!node.__orig) node.__orig = node.nodeValue;
+      var src = node.__orig;
+      var key = src.trim();
+      if (!key) return;
+      if (l === 'fr') { node.nodeValue = src; return; }
+      var entry = dict[key];
+      if (entry) {
+        var t = (l === 'nl') ? entry[0] : entry[1];
+        node.nodeValue = src.replace(key, t);
+      } else {
+        node.nodeValue = src;
+      }
+    });
+    // Translate <title>
+    var title = document.querySelector('title');
+    if (title){
+      if (!title.__orig) title.__orig = title.textContent;
+      var tk = title.__orig.trim();
+      var te = dict[tk];
+      if (l === 'fr' || !te) title.textContent = title.__orig;
+      else title.textContent = (l === 'nl') ? te[0] : te[1];
+    }
+    document.documentElement.lang = l;
+    // Update buttons
+    document.querySelectorAll('.lang-switch button').forEach(function(b){
+      b.classList.toggle('active', b.dataset.lang === l);
+    });
+  }
+  function buildSwitcher(){
+    var nav = document.querySelector('header nav');
+    if (!nav) return;
+    var box = document.createElement('span');
+    box.className = 'lang-switch';
+    ['fr','nl','en'].forEach(function(l){
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.dataset.lang = l;
+      b.textContent = l.toUpperCase();
+      b.addEventListener('click', function(){ setLang(l); applyLang(l); });
+      box.appendChild(b);
+    });
+    nav.appendChild(box);
+  }
+  document.addEventListener('DOMContentLoaded', function(){
+    buildSwitcher();
+    applyLang(getLang());
+  });
+})();
+</script>
+
 </head>
 <body>
     <!-- Header -->
@@ -266,291 +341,54 @@
     <!-- Menu -->
     <div class="menu-container">
         
-        <!-- APÉRITIFS -->
+        <!-- SOFTS MAISON -->
         <div class="menu-section">
-            <h2 class="section-title">Apéritifs</h2>
+            <h2 class="section-title">Softs Maison</h2>
             <div class="menu-grid">
                 <div>
                     <div class="menu-item">
                         <div class="item-name">
-                            <span>Apérol Spritz</span>
-                            <span class="item-price">10,00€</span>
+                            <span>Red Passion</span>
+                            <span class="item-price">4,50€</span>
                         </div>
+                        <div class="item-description">Infusion Hibiscus & Menthe Fraîche</div>
                     </div>
                     <div class="menu-item">
                         <div class="item-name">
-                            <span>Limoncello Spritz</span>
-                            <span class="item-price">10,00€</span>
+                            <span>Berry Punch</span>
+                            <span class="item-price">5,00€</span>
                         </div>
+                        <div class="item-description">Infusion Fruits Rouges</div>
                     </div>
                     <div class="menu-item">
                         <div class="item-name">
-                            <span>Campari Spritz</span>
-                            <span class="item-price">12,00€</span>
+                            <span>Classic Peach</span>
+                            <span class="item-price">5,00€</span>
                         </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="item-name">
-                            <span>Campari Orange</span>
-                            <span class="item-price">10,50€</span>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="item-name">
-                            <span>Campari</span>
-                            <span class="item-price">9,00€</span>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="item-name">
-                            <span>Kir</span>
-                            <span class="item-price">8,00€</span>
-                        </div>
+                        <div class="item-description">Infusion Pêche</div>
                     </div>
                 </div>
                 <div>
                     <div class="menu-item">
                         <div class="item-name">
-                            <span>Kir Cava</span>
-                            <span class="item-price">12,00€</span>
+                            <span>Honey Ginger</span>
+                            <span class="item-price">4,20€</span>
                         </div>
+                        <div class="item-description">Limonade Miel Gingembre</div>
                     </div>
                     <div class="menu-item">
                         <div class="item-name">
-                            <span>Ricard</span>
-                            <span class="item-price">3,80€</span>
+                            <span>Classic Lemon</span>
+                            <span class="item-price">4,20€</span>
                         </div>
+                        <div class="item-description">Limonade Deux Citrons</div>
                     </div>
                     <div class="menu-item">
                         <div class="item-name">
-                            <span>Picon Vin Blanc</span>
-                            <span class="item-price">9,00€</span>
+                            <span>Le Fantastic</span>
+                            <span class="item-price">4,20€</span>
                         </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="item-name">
-                            <span>Picon Bière</span>
-                            <span class="item-price">6,00€</span>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="item-name">
-                            <span>Pinceau</span>
-                            <span class="item-price">8,00€</span>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="item-name">
-                            <span>Porto Rouge</span>
-                            <span class="item-price">9,00€</span>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="item-name">
-                            <span>Coupe de Cava</span>
-                            <span class="item-price">9,00€</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- COCKTAILS -->
-        <div class="menu-section">
-            <h2 class="section-title">Cocktails</h2>
-            <div class="menu-grid">
-                <div>
-                    <div class="menu-item">
-                        <div class="item-name">
-                            <span>Daïquiri</span>
-                            <span class="item-price">12,00€</span>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="item-name">
-                            <span>Cuba Libre</span>
-                            <span class="item-price">12,00€</span>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="item-name">
-                            <span>Négroni</span>
-                            <span class="item-price">13,00€</span>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="item-name">
-                            <span>Margarita</span>
-                            <span class="item-price">13,00€</span>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="item-name">
-                            <span>Mai Tai</span>
-                            <span class="item-price">13,00€</span>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="menu-item">
-                        <div class="item-name">
-                            <span>Les Mules</span>
-                            <span class="item-price">12,00€</span>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="item-name">
-                            <span>Les Sour</span>
-                            <span class="item-price">12,00€</span>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="item-name">
-                            <span>Tequila Sunrise</span>
-                            <span class="item-price">12,00€</span>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="item-name">
-                            <span>Gin Fizz</span>
-                            <span class="item-price">12,00€</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- ALCOOLS -->
-        <div class="menu-section">
-            <h2 class="section-title">Alcools</h2>
-            <div class="menu-grid">
-                <div>
-                    <div class="menu-item">
-                        <div class="item-name">
-                            <span>Rhum Blanc</span>
-                            <span class="item-price">8,00€</span>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="item-name">
-                            <span>Rhum Brun</span>
-                            <span class="item-price">8,50€</span>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="item-name">
-                            <span>Démon's Share</span>
-                            <span class="item-price">13,50€</span>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="item-name">
-                            <span>Hendrick's Gin</span>
-                            <span class="item-price">14,00€</span>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="item-name">
-                            <span>Rasberry Buss 509</span>
-                            <span class="item-price">12,50€</span>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="item-name">
-                            <span>Marcelous Valéo</span>
-                            <span class="item-price">14,00€</span>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="menu-item">
-                        <div class="item-name">
-                            <span>Jack Daniel's</span>
-                            <span class="item-price">9,00€</span>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="item-name">
-                            <span>J&B Blended</span>
-                            <span class="item-price">9,00€</span>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="item-name">
-                            <span>Johnnie Walker</span>
-                            <span class="item-price">9,00€</span>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="item-name">
-                            <span>The Glenlivet 18Y</span>
-                            <span class="item-price">15,50€</span>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="item-name">
-                            <span>Vodka</span>
-                            <span class="item-price">9,00€</span>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="item-name">
-                            <span>Tequila</span>
-                            <span class="item-price">9,00€</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- SUGGESTIONS DU BAR -->
-        <div class="menu-section">
-            <h2 class="section-title">Suggestions du Bar</h2>
-            <div class="menu-grid">
-                <div>
-                    <div class="menu-item">
-                        <div class="item-name">
-                            <span>Apéro Maison</span>
-                            <span class="item-price">12,00€</span>
-                        </div>
-                        <div class="item-description">Porto Blanc et Tonic</div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="item-name">
-                            <span>Berry Spritz</span>
-                            <span class="item-price">13,00€</span>
-                        </div>
-                        <div class="item-description">Spritz au Fruits Rouges</div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="item-name">
-                            <span>L'Opaque Martini</span>
-                            <span class="item-price">12,00€</span>
-                        </div>
-                        <div class="item-description">Espresso Martini Revisité</div>
-                    </div>
-                </div>
-                <div>
-                    <div class="menu-item">
-                        <div class="item-name">
-                            <span>Spicy Margarita</span>
-                            <span class="item-price">13,00€</span>
-                        </div>
-                        <div class="item-description">Margarita Piments Habanero</div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="item-name">
-                            <span>Exotic Daïquiri</span>
-                            <span class="item-price">13,00€</span>
-                        </div>
-                        <div class="item-description">Daïquiri au Rhum Infusé à l'Ananas</div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="item-name">
-                            <span>Berry Daïquiri</span>
-                            <span class="item-price">12,00€</span>
-                        </div>
-                        <div class="item-description">Daïquiri aux Fruits Rouges</div>
+                        <div class="item-description">Limonade à l'Orange</div>
                     </div>
                 </div>
             </div>
@@ -633,60 +471,7 @@
             </div>
         </div>
         
-        <!-- SOFTS MAISON -->
-        <div class="menu-section">
-            <h2 class="section-title">Softs Maison</h2>
-            <div class="menu-grid">
-                <div>
-                    <div class="menu-item">
-                        <div class="item-name">
-                            <span>Red Passion</span>
-                            <span class="item-price">4,50€</span>
-                        </div>
-                        <div class="item-description">Infusion Hibiscus & Menthe Fraîche</div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="item-name">
-                            <span>Berry Punch</span>
-                            <span class="item-price">5,00€</span>
-                        </div>
-                        <div class="item-description">Infusion Fruits Rouges</div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="item-name">
-                            <span>Classic Peach</span>
-                            <span class="item-price">5,00€</span>
-                        </div>
-                        <div class="item-description">Infusion Pêche</div>
-                    </div>
-                </div>
-                <div>
-                    <div class="menu-item">
-                        <div class="item-name">
-                            <span>Honey Ginger</span>
-                            <span class="item-price">4,20€</span>
-                        </div>
-                        <div class="item-description">Limonade Miel Gingembre</div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="item-name">
-                            <span>Classic Lemon</span>
-                            <span class="item-price">4,20€</span>
-                        </div>
-                        <div class="item-description">Limonade Deux Citrons</div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="item-name">
-                            <span>Le Fantastic</span>
-                            <span class="item-price">4,20€</span>
-                        </div>
-                        <div class="item-description">Limonade à l'Orange</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- BIÈRES -->
+        <!-- BEERS -->
         <div class="menu-section">
             <h2 class="section-title">Bières</h2>
             <div class="menu-grid">
@@ -705,7 +490,7 @@
                     </div>
                     <div class="menu-item">
                         <div class="item-name">
-                            <span>Choulette Blonde</span>
+                            <span>Chouffe Blonde</span>
                             <span class="item-price">5,80€</span>
                         </div>
                     </div>
@@ -751,160 +536,298 @@
             </div>
         </div>
         
-        <!-- DIGESTIFS -->
+        <!-- SUGGESTIONS DU BAR -->
         <div class="menu-section">
-            <h2 class="section-title">Digestifs</h2>
+            <h2 class="section-title">Suggestions du Bar</h2>
             <div class="menu-grid">
                 <div>
                     <div class="menu-item">
                         <div class="item-name">
-                            <span>Amaretto Disaronno</span>
-                            <span class="item-price">8,00€</span>
+                            <span>Apéro Maison</span>
+                            <span class="item-price">12,00€</span>
+                        </div>
+                        <div class="item-description">Porto Blanc et Tonic</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Berry Spritz</span>
+                            <span class="item-price">13,00€</span>
+                        </div>
+                        <div class="item-description">Spritz au Fruits Rouges</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>L'Orangette Martini</span>
+                            <span class="item-price">12,00€</span>
+                        </div>
+                        <div class="item-description">Espresso Martini Revisité</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Spicy Margarita</span>
+                            <span class="item-price">13,00€</span>
+                        </div>
+                        <div class="item-description">Margarita Infusée au Piments Habanero</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Exotic Daiquiri</span>
+                            <span class="item-price">13,00€</span>
+                        </div>
+                        <div class="item-description">Daiquiri au Rhum Infusé à l'Ananas</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Berry Daiquiri</span>
+                            <span class="item-price">12,00€</span>
+                        </div>
+                        <div class="item-description">Daiquiri au Fruits Rouges</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- APERITIFS -->
+        <div class="menu-section">
+            <h2 class="section-title">Apéritifs</h2>
+            <div class="menu-grid">
+                <div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Apérol Spritz</span>
+                            <span class="item-price">10,00€</span>
                         </div>
                     </div>
                     <div class="menu-item">
                         <div class="item-name">
-                            <span>Baileys</span>
-                            <span class="item-price">8,00€</span>
+                            <span>Limoncello Spritz</span>
+                            <span class="item-price">10,00€</span>
                         </div>
                     </div>
                     <div class="menu-item">
                         <div class="item-name">
-                            <span>Calvados</span>
+                            <span>Campari Spritz</span>
+                            <span class="item-price">12,00€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Campari Orange</span>
+                            <span class="item-price">10,50€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Campari</span>
                             <span class="item-price">9,00€</span>
                         </div>
                     </div>
                     <div class="menu-item">
                         <div class="item-name">
-                            <span>Cointreau</span>
+                            <span>Kir</span>
                             <span class="item-price">8,00€</span>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="item-name">
-                            <span>Cognac</span>
-                            <span class="item-price">11,00€</span>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="item-name">
-                            <span>Grand-Marnier</span>
-                            <span class="item-price">9,00€</span>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="item-name">
-                            <span>Grappa</span>
-                            <span class="item-price">9,00€</span>
                         </div>
                     </div>
                 </div>
                 <div>
                     <div class="menu-item">
                         <div class="item-name">
-                            <span>Limoncello</span>
+                            <span>Kir Cava</span>
+                            <span class="item-price">12,00€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Ricard</span>
+                            <span class="item-price">3,80€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Picon Vin Blanc</span>
+                            <span class="item-price">9,00€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Picon Bière</span>
+                            <span class="item-price">6,00€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Pinneau</span>
                             <span class="item-price">8,00€</span>
                         </div>
                     </div>
                     <div class="menu-item">
                         <div class="item-name">
-                            <span>Mandarine Napoléon</span>
-                            <span class="item-price">11,00€</span>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="item-name">
-                            <span>Sambuca</span>
+                            <span>Porto Rouge</span>
                             <span class="item-price">9,00€</span>
                         </div>
                     </div>
                     <div class="menu-item">
                         <div class="item-name">
-                            <span>Eau de Vilé</span>
+                            <span>Coupe de Cava</span>
                             <span class="item-price">9,00€</span>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="item-name">
-                            <span>Poire Williams</span>
-                            <span class="item-price">10,00€</span>
-                        </div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="item-name">
-                            <span>Xanté</span>
-                            <span class="item-price">10,00€</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- BOISSONS CHAUDES -->
+        
+        <!-- COCKTAILS -->
         <div class="menu-section">
-            <h2 class="section-title">Boissons Chaudes</h2>
+            <h2 class="section-title">Cocktails</h2>
             <div class="menu-grid">
                 <div>
                     <div class="menu-item">
                         <div class="item-name">
-                            <span>Café</span>
-                            <span class="item-price">3,50€</span>
+                            <span>Daiquiri</span>
+                            <span class="item-price">12,00€</span>
                         </div>
                     </div>
                     <div class="menu-item">
                         <div class="item-name">
-                            <span>Décaféiné</span>
-                            <span class="item-price">3,50€</span>
+                            <span>Cuba Libre</span>
+                            <span class="item-price">12,00€</span>
                         </div>
                     </div>
                     <div class="menu-item">
                         <div class="item-name">
-                            <span>Espresso</span>
-                            <span class="item-price">3,50€</span>
+                            <span>Négroni</span>
+                            <span class="item-price">13,00€</span>
                         </div>
                     </div>
                     <div class="menu-item">
                         <div class="item-name">
-                            <span>Cappuccino</span>
-                            <span class="item-price">4,20€</span>
+                            <span>Margarita</span>
+                            <span class="item-price">13,00€</span>
                         </div>
                     </div>
                     <div class="menu-item">
                         <div class="item-name">
-                            <span>Latte Macchiato</span>
-                            <span class="item-price">4,20€</span>
+                            <span>Maï Taï</span>
+                            <span class="item-price">13,00€</span>
                         </div>
                     </div>
-                    <div class="item-description">Supplément sirop disponible</div>
                 </div>
                 <div>
                     <div class="menu-item">
                         <div class="item-name">
-                            <span>Espresso Macchiato</span>
-                            <span class="item-price">3,50€</span>
+                            <span>Les Mules</span>
+                            <span class="item-price">12,00€</span>
                         </div>
                     </div>
                     <div class="menu-item">
                         <div class="item-name">
-                            <span>Chocolate Chaud</span>
-                            <span class="item-price">4,20€</span>
+                            <span>Les Sour</span>
+                            <span class="item-price">12,00€</span>
                         </div>
                     </div>
                     <div class="menu-item">
                         <div class="item-name">
-                            <span>Irish</span>
-                            <span class="item-price">10,00€</span>
+                            <span>Tequila Sunrise</span>
+                            <span class="item-price">12,00€</span>
                         </div>
                     </div>
                     <div class="menu-item">
                         <div class="item-name">
-                            <span>Thé</span>
-                            <span class="item-price">3,50€</span>
+                            <span>Gin Fizz</span>
+                            <span class="item-price">12,00€</span>
                         </div>
                     </div>
-                    <div class="item-description">Et ses variantes</div>
                 </div>
             </div>
         </div>
+        
+        <!-- ALCOOLS -->
+        <div class="menu-section">
+            <h2 class="section-title">Alcools</h2>
+            <div class="menu-grid">
+                <div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Rhum Blanc</span>
+                            <span class="item-price">8,00€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Rhum Brun</span>
+                            <span class="item-price">8,50€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Demon's Share</span>
+                            <span class="item-price">13,50€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Hendrick's Gin</span>
+                            <span class="item-price">14,00€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Rasberry Buss 509</span>
+                            <span class="item-price">12,50€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Maredsous Valéo</span>
+                            <span class="item-price">14,00€</span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Jack Daniel's</span>
+                            <span class="item-price">9,00€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>J&B Blended</span>
+                            <span class="item-price">9,00€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Johnnie Walker</span>
+                            <span class="item-price">9,00€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>The Glenlivet 18Y</span>
+                            <span class="item-price">15,50€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Vodka</span>
+                            <span class="item-price">9,00€</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-name">
+                            <span>Tequila</span>
+                            <span class="item-price">9,00€</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+
         
         
     </div>

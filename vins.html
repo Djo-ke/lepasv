@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact & Réservation - Le Pas-V</title>
+    <title>Carte des Vins - Le Pas-V</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=EB+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
@@ -106,347 +106,167 @@
             font-family: 'Cinzel', serif;
             font-size: 48px;
             letter-spacing: 3px;
-            color: #c4935c;
             margin-bottom: 10px;
+            color: #c4935c;
         }
         
         .page-title p {
+            font-size: 18px;
+            letter-spacing: 2px;
             font-style: italic;
-            color: #999;
-            font-size: 14px;
+            color: #c4935c;
         }
         
-        .container {
+        .menu-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px 80px;
+            padding: 0 20px 60px;
         }
         
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
+        .menu-section {
             margin-bottom: 60px;
         }
         
-        .contact-main {
-            margin-bottom: 60px;
-        }
-        
-        .contact-info-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
-        }
-        
-        .contact-section h2 {
+        .section-title {
             font-family: 'Cinzel', serif;
-            font-size: 28px;
+            font-size: 32px;
+            letter-spacing: 2px;
             color: #c4935c;
             margin-bottom: 30px;
-            letter-spacing: 2px;
-        }
-        
-        .contact-info-block {
-            margin-bottom: 0;
-            padding: 20px;
-            background-color: rgba(196, 147, 92, 0.05);
-            border: 1px solid #c4935c;
-            border-radius: 4px;
-        }
-        
-        .contact-info-block strong {
-            font-family: 'Cinzel', serif;
-            font-size: 14px;
-            color: #c4935c;
-            display: block;
-            margin-bottom: 12px;
-            letter-spacing: 1px;
-        }
-        
-        .contact-info-block p {
-            font-size: 15px;
-            color: #ddd;
-            line-height: 1.8;
-            margin-bottom: 8px;
-        }
-        
-        .contact-info-block p:last-child {
-            margin-bottom: 0;
-        }
-        
-        .contact-info-block a {
-            color: #ffffff;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .contact-info-block a:hover {
-            color: #c4935c;
-        }
-        
-        .hours-block {
-            border-left: none;
-            padding-left: 20px;
-        }
-        
-        /* FORMULAIRE DE CONTACT */
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-group label {
-            font-family: 'Cinzel', serif;
-            font-size: 13px;
-            color: #c4935c;
-            display: block;
-            margin-bottom: 8px;
-            letter-spacing: 1px;
-        }
-        
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            background-color: #1a1a1a;
-            border: 1px solid #c4935c;
-            color: #ffffff;
-            font-family: 'EB Garamond', serif;
-            font-size: 14px;
-            transition: all 0.3s;
-        }
-        
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            background-color: #252525;
-            box-shadow: 0 0 10px rgba(196, 147, 92, 0.3);
-        }
-        
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-        
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: #666;
-        }
-        
-        .submit-btn {
-            background-color: #c4935c;
-            color: #000;
-            padding: 14px 40px;
-            border: none;
-            font-family: 'Cinzel', serif;
-            font-size: 14px;
-            letter-spacing: 2px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
             text-transform: uppercase;
+            border-bottom: 1px solid #c4935c;
+            padding-bottom: 15px;
         }
         
-        .submit-btn:hover {
-            background-color: #d4a574;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(196, 147, 92, 0.4);
-        }
-        
-        /* SECTION RÉSERVATION */
-        .reservation-section {
-            background: linear-gradient(135deg, #1a1a1a 0%, #111 100%);
-            border: 2px solid #c4935c;
-            padding: 60px;
-            margin-top: 60px;
-            text-align: center;
-            border-radius: 4px;
-        }
-        
-        .reservation-section h2 {
-            font-family: 'Cinzel', serif;
-            font-size: 36px;
-            color: #c4935c;
-            margin-bottom: 20px;
-            letter-spacing: 2px;
-        }
-        
-        .reservation-section p {
-            color: #ddd;
+        .wine-group {
             margin-bottom: 40px;
+        }
+        
+        .wine-group-title {
+            font-family: 'Cinzel', serif;
+            font-size: 20px;
+            color: #c4935c;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+        
+        .wine-item {
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #333;
+        }
+        
+        .wine-item:last-child {
+            border-bottom: none;
+        }
+        
+        .wine-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+        }
+        
+        .wine-name {
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
             font-size: 16px;
-            line-height: 1.8;
+            color: #ffffff;
+            flex: 1;
         }
         
-        .barestho-container {
-            margin-top: 30px;
-            border-radius: 4px;
-            overflow: hidden;
-            background-color: #0a0a0a;
+        .wine-price {
+            color: #c4935c;
+            font-weight: 600;
+            white-space: nowrap;
+            margin-left: 20px;
         }
         
-        .barestho-container iframe {
-            display: block;
-            width: 100%;
-            min-height: 700px;
+        .wine-origin {
+            font-size: 14px;
+            color: #a0a0a0;
+            margin-bottom: 8px;
+            font-style: italic;
         }
         
-        .reservation-buttons {
+        .wine-description {
+            font-size: 14px;
+            color: #d0d0d0;
+            line-height: 1.5;
+        }
+        
+        .house-wines {
+            background-color: #1a1a1a;
+            padding: 25px;
+            border-left: 3px solid #c4935c;
+            margin-bottom: 30px;
+        }
+        
+        .house-wines-title {
+            font-family: 'Cinzel', serif;
+            font-size: 18px;
+            color: #c4935c;
+            margin-bottom: 15px;
+        }
+        
+        .sizes {
             display: flex;
             gap: 30px;
-            justify-content: center;
+            margin-bottom: 20px;
             flex-wrap: wrap;
         }
         
-        .reservation-btn {
-            background-color: #c4935c;
-            color: #000;
-            padding: 16px 45px;
-            border: none;
-            font-family: 'Cinzel', serif;
-            font-size: 14px;
-            letter-spacing: 1px;
+        .size {
+            flex: 1;
+            min-width: 150px;
+        }
+        
+        .size-label {
+            color: #c4935c;
             font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-decoration: none;
-            display: inline-block;
-            text-transform: uppercase;
-            border-radius: 2px;
+            margin-right: 10px;
         }
         
-        .reservation-btn:hover {
-            background-color: #d4a574;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(196, 147, 92, 0.4);
-        }
-        
-        /* Modal pour formulaire de réservation */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
-            animation: fadeIn 0.3s;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        .modal-content {
-            background-color: #0a0a0a;
-            margin: 5% auto;
-            padding: 40px;
-            border: 2px solid #c4935c;
-            width: 90%;
-            max-width: 500px;
-            border-radius: 0;
-            animation: slideDown 0.3s;
-        }
-        
-        @keyframes slideDown {
-            from {
-                transform: translateY(-50px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-        
-        .close-modal {
-            color: #c4935c;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: color 0.3s;
-        }
-        
-        .close-modal:hover {
-            color: #d4a574;
-        }
-        
-        .modal-title {
-            font-family: 'Cinzel', serif;
-            font-size: 28px;
-            color: #c4935c;
-            margin-bottom: 30px;
-            letter-spacing: 2px;
-            clear: both;
-        }
-        
-        .modal-form-group {
-            margin-bottom: 20px;
-            text-align: left;
-        }
-        
-        .modal-form-group label {
-            font-family: 'Cinzel', serif;
-            font-size: 13px;
-            color: #c4935c;
-            display: block;
-            margin-bottom: 8px;
-            letter-spacing: 1px;
-        }
-        
-        .modal-form-group input,
-        .modal-form-group select,
-        .modal-form-group textarea {
-            width: 100%;
-            padding: 12px;
-            background-color: #1a1a1a;
-            border: 1px solid #c4935c;
+        .size-price {
             color: #ffffff;
-            font-family: 'EB Garamond', serif;
-            font-size: 14px;
         }
         
-        .modal-form-group input:focus,
-        .modal-form-group select:focus,
-        .modal-form-group textarea:focus {
-            outline: none;
-            background-color: #252525;
-            box-shadow: 0 0 10px rgba(196, 147, 92, 0.3);
+        .house-wine-item {
+            margin-bottom: 20px;
         }
         
-        .modal-submit {
-            width: 100%;
-            background-color: #c4935c;
-            color: #000;
-            padding: 14px;
-            border: none;
+        .house-wine-name {
             font-family: 'Cinzel', serif;
-            font-size: 14px;
-            letter-spacing: 1px;
             font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-transform: uppercase;
+            color: #c4935c;
+            margin-bottom: 5px;
         }
         
-        .modal-submit:hover {
-            background-color: #d4a574;
+        .house-wine-desc {
+            font-size: 13px;
+            color: #d0d0d0;
+        }
+        
+        .allergies-note {
+            text-align: center;
+            padding: 30px 20px;
+            color: #888;
+            font-size: 13px;
+            margin-top: 40px;
         }
         
         footer {
             background-color: #0a0a0a;
             border-top: 2px solid #c4935c;
-            padding: 30px 20px;
             text-align: center;
+            padding: 30px 20px;
+            margin-top: 60px;
         }
         
         footer p {
-            font-size: 12px;
-            color: #999;
+            color: #888;
             margin: 5px 0;
+            font-size: 13px;
         }
         
         footer a {
@@ -454,11 +274,15 @@
             text-decoration: none;
         }
         
-        footer a:hover {
-            text-decoration: underline;
-        }
-        
         @media (max-width: 768px) {
+            .page-title h1 {
+                font-size: 32px;
+            }
+            
+            .section-title {
+                font-size: 24px;
+            }
+            
             nav {
                 gap: 15px;
             }
@@ -467,40 +291,13 @@
                 font-size: 12px;
             }
             
-            .contact-info-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .page-title h1 {
-                font-size: 36px;
-            }
-            
-            .reservation-section {
-                padding: 30px 20px;
-            }
-            
-            .barestho-container iframe {
-                min-height: 500px;
-            }
-            
-            .reservation-buttons {
+            .wine-header {
                 flex-direction: column;
             }
             
-            .reservation-btn {
-                width: 100%;
-            }
-            
-            .modal-content {
-                width: 95%;
-                padding: 30px 20px;
-            }
-            
-            .phone-btn {
-                width: 55px;
-                height: 55px;
-                bottom: 20px;
-                right: 20px;
+            .wine-price {
+                margin-left: 0;
+                margin-top: 5px;
             }
         }
     </style>
@@ -584,69 +381,209 @@ window.LEPASV_I18N = {"Accueil": ["Home", "Home"], "ACCUEIL": ["HOME", "HOME"], 
     <!-- Header -->
     <header>
         <div class="header-content">
-            <a href="index.html" class="logo">LE PAS-V</a>
+            <a href="#" class="logo">LE PAS-V</a>
             <nav>
-                <a href="index.html">Accueil</a>
-                <a href="boissons.html">Boissons</a>
-                <a href="plats.html">Plats</a>
-                <a href="contact.html" class="active">Contact</a>
+                <a href="#">ACCUEIL</a>
+                <a href="#">PLATS</a>
+                <a href="#">BOISSONS</a>
+                <a href="#" class="active">VINS</a>
+                <a href="#">CONTACT</a>
             </nav>
         </div>
     </header>
     
-    <!-- Bouton téléphone -->
-    <a href="tel:+3210878145" class="phone-btn">☎</a>
+    <a href="tel:+32123456789" class="phone-btn">☎</a>
     
     <!-- Page Title -->
     <div class="page-title">
-        <h1>Contact & Réservation</h1>
-        <p>Nous vous répondrons dans les meilleurs délais</p>
+        <h1>LA CARTE DES VINS</h1>
+        <p>Sélection Premium • Vignobles de France</p>
     </div>
     
-    <!-- Contenu Principal -->
-    <div class="container">
-        <div class="contact-main">
-            <!-- Section Contact Info -->
-            <div class="contact-section">
-                <h2>Nous Contacter</h2>
-                
-                <div class="contact-info-grid">
-                    <div class="contact-info-block">
-                        <strong>Téléphone</strong>
-                        <p><a href="tel:+3210878145">010 87 81 45</a></p>
-                    </div>
-                    
-                    <div class="contact-info-block">
-                        <strong>Email</strong>
-                        <p><a href="mailto:lepasv.restaurant@gmail.com">lepasv.restaurant@gmail.com</a></p>
-                    </div>
-                    
-                    <div class="contact-info-block">
-                        <strong>Adresse</strong>
-                        <p>Rue Charles Sambon 14<br>1300 Wavre<br>Belgique</p>
-                    </div>
-                    
-                    <div class="contact-info-block">
-                        <strong>Horaires</strong>
-                        <p>Lundi: Fermé</p>
-                        <p>Mardi: 12h - 14h30 / 18h - 22h</p>
-                        <p>Mercredi: 12h - 14h30 / 18h - 22h</p>
-                        <p>Jeudi: 12h - 14h30 / 18h - 22h</p>
-                        <p>Vendredi: 12h - 14h30 / 18h - 22h</p>
-                        <p>Samedi: 12h - 14h30 / 18h - 22h</p>
-                        <p>Dimanche: Fermé</p>
-                    </div>
+    <!-- Menu -->
+    <div class="menu-container">
+        
+        <!-- VINS MAISON -->
+        <div class="house-wines">
+            <div class="house-wines-title">Vins Maison</div>
+            <div class="sizes">
+                <div class="size">
+                    <span class="size-label">Le Verre</span>
+                    <span class="size-price">5,50€</span>
                 </div>
+                <div class="size">
+                    <span class="size-label">Le Quart</span>
+                    <span class="size-price">10€</span>
+                </div>
+                <div class="size">
+                    <span class="size-label">Le Demi</span>
+                    <span class="size-price">20€</span>
+                </div>
+            </div>
+            
+            <div class="house-wine-item">
+                <div class="house-wine-name">Blend Rouge – IGP Méditerranée</div>
+                <div class="house-wine-desc">Le Rhône dans le verre : un vin du sud chaleureux, sur le fruit mûr et la souplesse.</div>
+            </div>
+            
+            <div class="house-wine-item">
+                <div class="house-wine-name">Blend Blanc – IGP Méditerranée</div>
+                <div class="house-wine-desc">Frais et très sec, ce blanc du sud mêle agrumes, fleurs blanches et belle légèreté.</div>
+            </div>
+            
+            <div class="house-wine-item">
+                <div class="house-wine-name">Vaucluse Rosé</div>
+                <div class="house-wine-desc">Le rosé gris pour l'été. Directement venu du Rhône.</div>
             </div>
         </div>
         
-        <!-- Section Réservation -->
-        <div class="reservation-section">
-            <h2>Réserver une Table</h2>
-            <p>Réservez facilement votre table directement en ligne</p>
-            <div class="barestho-container">
-                <iframe id="barestho-widget" src="about:blank" width="100%" height="700" frameborder="0" allowfullscreen="" style="border: none;"></iframe>
+        <!-- VINS ROUGES -->
+        <div class="menu-section">
+            <h2 class="section-title">Vins Rouges</h2>
+            
+            <div class="wine-item">
+                <div class="wine-header">
+                    <div class="wine-name">Pinot Noir – Vignoble Cogné</div>
+                    <div class="wine-price">30,00€</div>
+                </div>
+                <div class="wine-origin">IGP Val de Loire</div>
+                <div class="wine-description">Un Pinot noir ligérien tout en fraîcheur : croquant, léger, à servir légèrement frais.</div>
             </div>
+            
+            <div class="wine-item">
+                <div class="wine-header">
+                    <div class="wine-name">Recto – Château Franc Baudron</div>
+                    <div class="wine-price">27,00€</div>
+                </div>
+                <div class="wine-origin">Bordeaux</div>
+                <div class="wine-description">Le Bordeaux nouvelle vague : fruits rouges et noirs expressifs, touche boisée élégante.</div>
+            </div>
+            
+            <div class="wine-item">
+                <div class="wine-header">
+                    <div class="wine-name">Lussac Saint-Émilion – Château de la Grenière</div>
+                    <div class="wine-price">38,00€</div>
+                </div>
+                <div class="wine-origin">Bordeaux</div>
+                <div class="wine-description">Un classique de la Saint-Émilion : fruits confits, fraîcheur minérale et tanins bien fondus.</div>
+            </div>
+            
+            <div class="wine-item">
+                <div class="wine-header">
+                    <div class="wine-name">Le Brojolais-Villages – Famille Laurent Gauthier</div>
+                    <div class="wine-price">34,00€</div>
+                </div>
+                <div class="wine-origin">AOP Beaujolais Village</div>
+                <div class="wine-description">Gamay juteux et vibrant, aux notes de fruits rouges croquants et d'épices fines. Un rouge convivial, gourmand et terriblement facile à aimer.</div>
+            </div>
+            
+            <div class="wine-item">
+                <div class="wine-header">
+                    <div class="wine-name">Lou Daro – Château de Gragnos</div>
+                    <div class="wine-price">42,00€</div>
+                </div>
+                <div class="wine-origin">AOP Saint-Chinian - Languedoc</div>
+                <div class="wine-description">Rouge solaire aux notes de fruits noirs, garrigue et épices. Chaleureux, structuré et généreux — le Sud dans le verre.</div>
+            </div>
+            
+            <div class="wine-item">
+                <div class="wine-header">
+                    <div class="wine-name">Vertigo Rouge – Mas Amiel</div>
+                    <div class="wine-price">40,00€</div>
+                </div>
+                <div class="wine-origin">AOP Côtes du Roussillon</div>
+                <div class="wine-description">Assemblage du Roussillon plein d'énergie : fruits noirs, épices et fraîcheur minérale.</div>
+            </div>
+            
+            <div class="wine-item">
+                <div class="wine-header">
+                    <div class="wine-name">Classique Vacqueyras – Domaine La Ligière</div>
+                    <div class="wine-price">47,00€</div>
+                </div>
+                <div class="wine-origin">AOC Vacqueyras - Rhône Sud</div>
+                <div class="wine-description">Un Vacqueyras typique : puissant, épicé, aux notes de garrigue et de fruits noirs.</div>
+            </div>
+            
+            <div class="wine-item">
+                <div class="wine-header">
+                    <div class="wine-name">À la Rêverie Rouge – Château de Montfrin</div>
+                    <div class="wine-price">36,00€</div>
+                </div>
+                <div class="wine-origin">AOP Côtes du Rhône</div>
+                <div class="wine-description">Rouge du Rhône tout en légèreté et douceur : fruits rouges, souplesse et très rond !</div>
+            </div>
+            
+            <div class="wine-item">
+                <div class="wine-header">
+                    <div class="wine-name">Loriando Nero d'Avola – Assuli</div>
+                    <div class="wine-price">35,00€</div>
+                </div>
+                <div class="wine-origin">DOC Sicile</div>
+                <div class="wine-description">Un grand rouge sicilien : intense, charnu, aux notes de cerise noire et d'épices méditerranéennes.</div>
+            </div>
+            
+            <div class="wine-item">
+                <div class="wine-header">
+                    <div class="wine-name">Crozes Hermitage "Esprit" – Domaine Jean Esprit</div>
+                    <div class="wine-price">69,00€</div>
+                </div>
+                <div class="wine-origin">AOP Crozes-Hermitage</div>
+                <div class="wine-description">Syrah du Rhône nord expressive, fruits rouges et épices. Chaleureux, frais et structuré – plaisir immédiat.</div>
+            </div>
+        </div>
+        
+        <!-- VINS BLANCS ET ROSÉS -->
+        <div class="menu-section">
+            <h2 class="section-title">Vins Blancs et Rosés</h2>
+            
+            <div class="wine-item">
+                <div class="wine-header">
+                    <div class="wine-name">Grillo – Assuli</div>
+                    <div class="wine-price">24,00€</div>
+                </div>
+                <div class="wine-origin">DOC Sicilia</div>
+                <div class="wine-description">Un blanc sicilien très frais : vous retrouverez des arômes de citron & pêche blanche. Parfait de l'apéro jusqu'au repas.</div>
+            </div>
+            
+            <div class="wine-item">
+                <div class="wine-header">
+                    <div class="wine-name">Chardonnay Jeunes Vignes – Dampt & Frères</div>
+                    <div class="wine-price">28,00€</div>
+                </div>
+                <div class="wine-origin">Bourgogne</div>
+                <div class="wine-description">Un Chardonnay bourguignon bien sec et minérale : notes florales, fruits blancs et fraîcheur minérale.</div>
+            </div>
+            
+            <div class="wine-item">
+                <div class="wine-header">
+                    <div class="wine-name">Sauvignon Blanc – Château Guilhem</div>
+                    <div class="wine-price">27,00€</div>
+                </div>
+                <div class="wine-origin">IGP Pays d'Oc</div>
+                <div class="wine-description">Un Sauvignon méditerranéen plein de peps : herbacé, arômes citronnés et très rafraîchissant.</div>
+            </div>
+            
+            <div class="wine-item">
+                <div class="wine-header">
+                    <div class="wine-name">Gavi di Gavi 'Cuvée II' – Binè</div>
+                    <div class="wine-price">39,00€</div>
+                </div>
+                <div class="wine-origin">DOCG Gavi di Gavi - Piémont</div>
+                <div class="wine-description">La star des blancs du Piémont : citron mûr, amande blanche et minéralité élégante. Élégant comme le vigneron !</div>
+            </div>
+            
+            <div class="wine-item">
+                <div class="wine-header">
+                    <div class="wine-name">Rosé Cosmos – Château de Gragnos</div>
+                    <div class="wine-price">27,00€</div>
+                </div>
+                <div class="wine-origin">AOP Saint-Chinian - Languedoc</div>
+                <div class="wine-description">Un rosé du Languedoc en équilibre sur la fraîcheur et les arômes de pamplemousse, floral, très désaltérant.</div>
+            </div>
+        </div>
+        
+        <div class="allergies-note">
+            Liste d'allergènes disponible sur demande
         </div>
     </div>
     
@@ -655,9 +592,5 @@ window.LEPASV_I18N = {"Accueil": ["Home", "Home"], "ACCUEIL": ["HOME", "HOME"], 
         <p>&copy; 2026 Le Pas-V. Tous droits réservés.</p>
         <p>Restaurant Grill Franco-Belge • <a href="#">Mention légale</a></p>
     </footer>
-    
-    <script>
-        // Scripts optionnels (pas nécessaire pour cette version simplifiée)
-    </script>
 </body>
 </html>
