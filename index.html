@@ -76,9 +76,11 @@
     .avis-stars { font-size: 16px; color: #c4935c; letter-spacing: 2px; }
     .avis-text { font-size: 14px; color: #ddd; line-height: 1.8; font-style: italic; flex-grow: 1; }
     .avis-author { font-size: 13px; color: #999; font-weight: 600; }
-    @media (max-width: 768px) {
-      .avis-grid { grid-template-columns: 1fr; }
-    }
+    .reservation-block { max-width: 1200px; margin: 60px auto; padding: 60px 20px; border-top: 2px solid #c4935c; border-bottom: 2px solid #c4935c; }
+    .reservation-block h2 { font-family: 'Cinzel', serif; font-size: 36px; color: #c4935c; margin-bottom: 40px; text-align: center; letter-spacing: 3px; }
+    .reservation-iframe { width: 100%; height: 800px; border: 1px solid #c4935c; border-radius: 4px; }
+    .reservation-btn { position: fixed; bottom: 100px; right: 30px; width: 60px; height: 60px; background-color: #c4935c; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 20px; box-shadow: 0 4px 15px rgba(196, 147, 92, 0.4); z-index: 98; color: #000; transition: transform 0.3s; font-weight: 700; }
+    .reservation-btn:hover { transform: scale(1.1); }
     @media (max-width: 768px) {
       .hero h1 { font-size: 42px; }
       .hero-actions { gap: 10px; }
@@ -86,6 +88,9 @@
       .about-grid { grid-template-columns: 1fr; }
       .contact-grid { gap: 30px; }
       .horaires-grid { grid-template-columns: repeat(2, 1fr); }
+      .avis-grid { grid-template-columns: 1fr; }
+      .reservation-btn { bottom: 80px; width: 50px; height: 50px; font-size: 18px; }
+      .reservation-iframe { height: 600px; }
       nav { gap: 15px; }
       nav a { font-size: 12px; }
     }
@@ -180,6 +185,7 @@ window.LEPASV_I18N = {"Accueil": ["Home", "Home"], "ACCUEIL": ["HOME", "HOME"], 
   </header>
 
   <a href="tel:010878145" class="call-btn" aria-label="Appeler">☎</a>
+  <a href="#reservation-block" class="reservation-btn" aria-label="Réserver une table" title="Réserver">📅</a>
 
   <section class="hero" id="accueil">
     <div>
@@ -279,6 +285,11 @@ window.LEPASV_I18N = {"Accueil": ["Home", "Home"], "ACCUEIL": ["HOME", "HOME"], 
         </div>
       </div>
     </div>
+  </section>
+
+  <section class="reservation-block" id="reservation-block">
+    <h2>Vous Désirez Réserver Une Table</h2>
+    <iframe class="reservation-iframe" src="https://lepasv.reservation.barestho.com" frameborder="0" allowfullscreen="" style="border: none;"></iframe>
   </section>
 
   <footer>
